@@ -29,6 +29,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.box-preview-wrapper{
+  overflow: hidden;
+}
+
 .box-preview {
   background-color: pink;
   max-height: 100%;

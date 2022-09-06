@@ -84,19 +84,17 @@ body {
   order: 0;
   align-self: stretch;
   flex-grow: 0;
-}
 
+  main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
 
-main {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 48px;
-
-  > * {
-    width: 50%;
+    > div {
+      width: 50%;
+    }
   }
 }
-
 </style>
