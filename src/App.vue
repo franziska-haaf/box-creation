@@ -1,22 +1,22 @@
 <template>
-  <header>
-    <h1>New Box </h1>
-    <div class="tabs">
-      <button
-          v-for="tab in tabs"
-          :key="tab"
-          :class="['tab', { active: currentTab === tab }]"
-          @click="currentTab = tab"
-      >
-        <span v-if="tab === 'BasicData'">Basic data</span>
-        <span v-if="tab === 'BoxStyle'">Style</span>
-      </button>
-    </div>
-  </header>
-  <div class="hello">
+  <div class="content">
+    <header>
+      <h1>New Box </h1>
+      <div class="tabs">
+        <button
+            v-for="tab in tabs"
+            :key="tab"
+            :class="['tab', { active: currentTab === tab }]"
+            @click="currentTab = tab"
+        >
+          <span v-if="tab === 'BasicData'">Basic data</span>
+          <span v-if="tab === 'BoxStyle'">Style</span>
+        </button>
+      </div>
+    </header>
+    <component :is="currentTab"></component>
+    <BoxPreview msg="Welcome to Your Vue.js App"/>
   </div>
-  <component :is="currentTab"></component>
-  <BoxPreview msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
@@ -41,13 +41,41 @@ export default {
 </script>
 
 <style>
+html, body, #app, .content{
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  justify-content: flex-end;
+  background: url('assets/background.webp') no-repeat;
+  background-size: contain;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px;
+  gap: 32px;
+
+  width: 1390px;
+  height: 100%;
+
+  background: #F8F9FA;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
 }
 
 .tab{
