@@ -16,12 +16,14 @@
     </header>
     <main>
       <component :is="currentTab"></component>
-      <BoxPreview msg="Welcome to Your Vue.js App"/>
+      <BoxPreview/>
     </main>
   </div>
 </template>
 
 <script>
+import  './assets/style.css'
+import { store } from './store.js'
 import BasicData from './components/BasicData.vue'
 import BoxPreview from './components/BoxPreview.vue'
 import BoxStyle from './components/BoxStyle.vue'
@@ -36,7 +38,9 @@ export default {
   data(){
     return{
       currentTab: 'BasicData',
-      tabs: ['BasicData', 'BoxStyle']
+      tabs: ['BasicData', 'BoxStyle'],
+      sponsoredLinksOutput: store.sponsoredLinks,
+      store
     }
   }
 }
@@ -107,10 +111,9 @@ main{
   width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: stretch;
-  align-content: stretch;
   gap: 48px;
 }
+
 main > *{
   width: 50%;
 }

@@ -1,0 +1,47 @@
+.flex-column-4 {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.flex-column-8 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.flex-column-16 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.flex-column-24 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+input, select{
+    height: 56px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.36);
+    border-radius: 4px;
+    padding: 0 12px 0 16px;
+}
+
+select{
+    padding-right: 48px;
+}
+
+.small-text{
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+input[type='number']{
+    max-width: 80px;
+    width: 80px;
+    text-align: center;
+}
