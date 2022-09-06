@@ -1,14 +1,21 @@
 <template>
   <header>
     <h1>New Box </h1>
-    <div><p>Tab 1</p>
-      <p>Tab 2</p></div>
+    <div class="tabs">
+      <button
+          v-for="tab in tabs"
+          :key="tab"
+          :class="['tab', { active: currentTab === tab }]"
+          @click="currentTab = tab"
+      >
+        {{ tab }}
+      </button>
+    </div>
   </header>
   <div class="hello">
   </div>
-  <BasicData msg="Welcome to Your Vue.js App"/>
+  <component :is="currentTab"></component>
   <BoxPreview msg="Welcome to Your Vue.js App"/>
-  <BoxStyle msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
@@ -22,6 +29,12 @@ export default {
     BasicData,
     BoxPreview,
     BoxStyle
+  },
+  data(){
+    return{
+      currentTab: 'BasicData',
+      tabs: ['BasicData', 'BoxStyle']
+    }
   }
 }
 </script>
@@ -34,5 +47,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.tab{
+background-color: red;
+}
+
+.tab.active{
+  background-color: blue;
 }
 </style>
