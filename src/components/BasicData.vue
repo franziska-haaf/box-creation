@@ -24,6 +24,14 @@
         <button @click="store.increaseSponsoredLink()"  :disabled="store.sponsoredLinks === 10">+</button>
       </div>
     </div>
+
+    <div class="flex-column-4">
+      <span>Size</span>
+      <div>
+        <button @click="store.setBoxWidth(400); store.setBoxHeight(400)">400 x 400</button>
+        <button @click="store.setBoxWidth(800); store.setBoxHeight(800)">800 x 800</button>
+      </div>
+    </div>
   </div>
 
 </template>

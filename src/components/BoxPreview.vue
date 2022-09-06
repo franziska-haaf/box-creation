@@ -1,35 +1,39 @@
 <template>
-<div>
- Box preview
-</div>
+  <div class="box-preview-wrapper">
+    <div class="box-preview" :style="boxSize">
+      Box preview
+    </div>
+  </div>
 </template>
 
 <script>
+import {store} from '@/store'
+
 export default {
   name: 'BoxPreview',
-  props: {
-    msg: String
+  data() {
+    return {
+      store
+    }
+  },
+  computed: {
+    boxSize () {
+      return{
+        '--box-height': store.boxHeight + 'px',
+        '--box-width': store.boxWidth + 'px'
+      }
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+<style scoped lang="scss">
+.box-preview {
+  background-color: pink;
+  max-height: 100%;
+  max-width: 100%;
+  height: var(--box-height);
+  width: var(--box-width);
 }
 </style>

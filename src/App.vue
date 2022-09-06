@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import  './assets/style.css'
-import { store } from './store.js'
+import './assets/style.css'
+import {store} from './store.js'
 import BasicData from './components/BasicData.vue'
 import BoxPreview from './components/BoxPreview.vue'
 import BoxStyle from './components/BoxStyle.vue'
@@ -35,8 +35,8 @@ export default {
     BoxPreview,
     BoxStyle
   },
-  data(){
-    return{
+  data() {
+    return {
       currentTab: 'BasicData',
       tabs: ['BasicData', 'BoxStyle'],
       sponsoredLinksOutput: store.sponsoredLinks,
@@ -46,12 +46,13 @@ export default {
 }
 </script>
 
-<style>
-html, body, #app, .content{
+<style lang="scss">
+html, body, #app, .content {
   height: 100%;
   max-height: 100%;
   overflow: hidden;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -62,17 +63,18 @@ html, body, #app, .content{
   background-size: contain;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
 }
 
-.content{
+.content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 32px;
   gap: 24px;
+  box-sizing: border-box;
 
   width: 1390px;
   height: 100%;
@@ -85,15 +87,16 @@ body{
 }
 
 
-main{
+main {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   gap: 48px;
-}
 
-main > *{
-  width: 50%;
+  > * {
+    width: 50%;
+  }
 }
 
 </style>
