@@ -14,8 +14,10 @@
         </button>
       </div>
     </header>
-    <component :is="currentTab"></component>
-    <BoxPreview msg="Welcome to Your Vue.js App"/>
+    <main>
+      <component :is="currentTab"></component>
+      <BoxPreview msg="Welcome to Your Vue.js App"/>
+    </main>
   </div>
 </template>
 
@@ -66,7 +68,7 @@ body{
   flex-direction: column;
   align-items: flex-start;
   padding: 32px;
-  gap: 32px;
+  gap: 24px;
 
   width: 1390px;
   height: 100%;
@@ -99,6 +101,18 @@ body{
 .tab:not(.active):hover{
   background: rgba(56, 30, 255, 0.08);
   cursor: pointer;
+}
+
+main{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: stretch;
+  gap: 48px;
+}
+main > *{
+  width: 50%;
 }
 
 </style>
