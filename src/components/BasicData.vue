@@ -17,12 +17,11 @@
     </div>
 
     <div class="flex-column-4">
-<!--      <label for="sponsoredLinksAmount">Sponsored links amount <span class="small-text">3-10</span></label>-->
       <span>Sponsored links amount <span class="small-text">3-10</span></span>
       <div class="number-input">
-        <button @click="store.decreaseSponsoredLink()">-</button>
+        <button @click="store.decreaseSponsoredLink()" :disabled="store.sponsoredLinks === 3">-</button>
         <div class="number">{{store.sponsoredLinks}}</div>
-        <button @click="store.increaseSponsoredLink()">+</button>
+        <button @click="store.increaseSponsoredLink()"  :disabled="store.sponsoredLinks === 10">+</button>
       </div>
     </div>
   </div>

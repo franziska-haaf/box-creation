@@ -3,9 +3,9 @@ import { reactive } from 'vue'
 export const store = reactive({
     sponsoredLinks: 4,
     increaseSponsoredLink() {
-        this.sponsoredLinks++
+        this.sponsoredLinks < 10 ? this.sponsoredLinks ++ : ''
     },
     decreaseSponsoredLink() {
-        this.sponsoredLinks--
+        this.sponsoredLinks > 3 ? this.sponsoredLinks -- : ''
     }
 })

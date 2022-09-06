@@ -97,3 +97,8 @@ button:not(.filled):hover{
     background: rgba(56, 30, 255, 0.08);
     cursor: pointer;
 }
+
+button:disabled:hover{
+    background: #fff;
+    cursor: inherit;
+}
