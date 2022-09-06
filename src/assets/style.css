@@ -22,7 +22,7 @@
     gap: 24px;
 }
 
-input, select{
+input, select {
     height: 56px;
     font-size: 16px;
     box-sizing: border-box;
@@ -31,17 +31,69 @@ input, select{
     padding: 0 12px 0 16px;
 }
 
-select{
+select {
     padding-right: 48px;
 }
 
-.small-text{
+.small-text {
     font-size: 11px;
     color: rgba(0, 0, 0, 0.54);
 }
 
-input[type='number']{
+input[type='number'] {
     max-width: 80px;
     width: 80px;
     text-align: center;
+}
+
+.number-input {
+    display: flex;
+}
+
+
+.number-input .number,
+ button {
+    height: 56px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 0;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.36);
+}
+
+.number-input .number {
+    display: inline-block;
+    width: 70px;
+    padding: 16px 16px;
+    border-left: none;
+    border-right: none;
+}
+
+.number-input button {
+    width: 56px;
+    font-size: 24px;
+}
+
+/*Button styling*/
+button.primary{
+    background: #ffffff;
+    border: 1px solid #381EFF;
+    height: 40px;
+    padding: 10px 24px;
+    color: #381EFF;
+}
+
+button.filled{
+    background: #381EFF;
+    color: #ffffff;
+}
+
+button.filled:hover{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), #381EFF;
+    cursor: pointer;
+}
+
+button:not(.filled):hover{
+    background: rgba(56, 30, 255, 0.08);
+    cursor: pointer;
 }

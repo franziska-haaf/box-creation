@@ -18,10 +18,10 @@
 
     <div class="flex-column-4">
 <!--      <label for="sponsoredLinksAmount">Sponsored links amount <span class="small-text">3-10</span></label>-->
-      Sponsored links amount
+      <span>Sponsored links amount <span class="small-text">3-10</span></span>
       <div class="number-input">
         <button @click="store.decreaseSponsoredLink()">-</button>
-        {{store.sponsoredLinks}}
+        <div class="number">{{store.sponsoredLinks}}</div>
         <button @click="store.increaseSponsoredLink()">+</button>
       </div>
     </div>
@@ -31,6 +31,7 @@
 
 <script>
 import { store } from '@/store'
+import  '../assets/style.css'
 
 export default {
   name: 'BasicData',

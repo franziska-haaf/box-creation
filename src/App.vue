@@ -6,7 +6,7 @@
         <button
             v-for="tab in tabs"
             :key="tab"
-            :class="['tab', { active: currentTab === tab }]"
+            :class="['primary', { filled: currentTab === tab }]"
             @click="currentTab = tab"
         >
           <span v-if="tab === 'BasicData'">Basic data</span>
@@ -84,28 +84,6 @@ body{
   flex-grow: 0;
 }
 
-.tab{
-  background: #ffffff;
-  border: 1px solid #381EFF;
-  height: 40px;
-  padding: 10px 24px;
-  color: #381EFF;
-}
-
-.tab.active{
-  background: #381EFF;
-  color: #ffffff;
-}
-
-.tab.active:hover{
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), #381EFF;
-  cursor: pointer;
-}
-
-.tab:not(.active):hover{
-  background: rgba(56, 30, 255, 0.08);
-  cursor: pointer;
-}
 
 main{
   width: 100%;
