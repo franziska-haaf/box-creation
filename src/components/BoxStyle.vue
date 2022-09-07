@@ -60,32 +60,66 @@
           </div>
           <div class="flex-row__8">
             <div class="color-picker"><input type="color" v-model="store.boxWrapperFill"></div>
-            {{store.boxWrapperFill}}
-            </div>
+            {{ store.boxWrapperFill }}
+          </div>
         </div>
       </div>
 
       <!--Border options-->
-      <div>Border options todo</div>
+      <div class="flex-column__4">
+        Border
+        <div class="flex-row__48">
+          <div class="hidden-input">
+            <img src="../assets/icon/border-weight.svg" alt="Lorem" height="24" width="24">
+            <input v-model="store.boxWrapperBorderWeight" class="dense">
+          </div>
+          <div class="flex-row__8">
+            <div class="color-picker"><input type="color" v-model="store.boxWrapperBorderColor"></div>
+            {{ store.boxWrapperBorderColor }}
+          </div>
+          <div>
+            <button :class="store.boxWrapperBorderStyle === 'solid'? ' filled img' : 'img'"
+                    @click="store.boxWrapperBorderStyle = 'solid'">
+              <img src="../assets/icon/border-solid.svg" alt="lorem" height="24" width="24">
+            </button>
+            <button :class="store.boxWrapperBorderStyle === 'dashed'? ' filled img' : 'img'"
+                    @click="store.boxWrapperBorderStyle = 'dashed'">
+              <img src="../assets/icon/border-dashed.svg" alt="lorem" height="24" width="24">
+            </button>
+            <button :class="store.boxWrapperBorderStyle === 'dotted'? ' filled img' : 'img'"
+                    @click="store.boxWrapperBorderStyle = 'dotted'">
+              <img src="../assets/icon/border-dotted.svg" alt="lorem" height="24" width="24">
+            </button>
+          </div>
+          <div v-if="store.boxWrapperBorderStyle === 'dashed' || store.boxWrapperBorderStyle === 'dotted'" class="hidden-input">
+            <img src="../assets/icon/border-gap.svg" alt="blah" height="24" width="24">
+            <input v-model="store.boxWrapperDashedGap" class="dense">
+          </div>
+        </div>
+      </div>
 
       <!--Margin options-->
       <div class="flex-column__4">
         Spacing
-       <div class="flex-row__48">
-         <div class="hidden-input">
-           <img src="../assets/icon/margin.svg" alt="A rectangle with 1 rounded corner" height="24" width="24">
-           <input v-model="store.boxWrapperPadding" class="dense">
-         </div>
-         <div>
-           Between links
-           <button :class="store.sponsoredLinkGapBetween === 'Auto'? ' filled' : ''" @click="store.sponsoredLinkGapBetween = 'Auto'; manualGapBetweenLinks = false">Auto</button>
-           <button :class="store.sponsoredLinkGapBetween === 'Manual'? ' filled' : ''" @click="store.sponsoredLinkGapBetween = 'Manual'; manualGapBetweenLinks = true">Manual</button>
-         </div>
-         <div v-if="manualGapBetweenLinks" class="hidden-input">
-             <img src="../assets/icon/margin_between_links.svg" alt="blah" height="24" width="24">
-             <input v-model="store.sponsoredLinkGapBetweenValue" class="dense">
-         </div>
-       </div>
+        <div class="flex-row__48">
+          <div class="hidden-input">
+            <img src="../assets/icon/margin.svg" alt="A rectangle with 1 rounded corner" height="24" width="24">
+            <input v-model="store.boxWrapperPadding" class="dense">
+          </div>
+          <div>
+            Between links
+            <button :class="store.sponsoredLinkGapBetween === 'Auto'? ' filled' : ''"
+                    @click="store.sponsoredLinkGapBetween = 'Auto'; manualGapBetweenLinks = false">Auto
+            </button>
+            <button :class="store.sponsoredLinkGapBetween === 'Manual'? ' filled' : ''"
+                    @click="store.sponsoredLinkGapBetween = 'Manual'; manualGapBetweenLinks = true">Manual
+            </button>
+          </div>
+          <div v-if="manualGapBetweenLinks" class="hidden-input">
+            <img src="../assets/icon/margin_between_links.svg" alt="blah" height="24" width="24">
+            <input v-model="store.sponsoredLinkGapBetweenValue" class="dense">
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -134,12 +168,13 @@ export default {
   }
 }
 
-.color-picker{
+.color-picker {
   height: 32px;
   width: 32px;
   border-radius: 400px;
   overflow: hidden;
-  input[type=color]{
+
+  input[type=color] {
     margin-left: -8px;
     margin-top: -8px;
     border: none;

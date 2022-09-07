@@ -31,7 +31,11 @@ export default {
         '--box-bg-color': store.boxWrapperFill,
         '--box-padding': store.boxWrapperPadding + 'px',
         '--box-margin-between-links': store.sponsoredLinkGapBetweenValue + 'px',
-        '--box-margin-between-links-mode': store.sponsoredLinkGapBetween === 'Auto' ? 'space-between' : 'flex-start'
+        '--box-margin-between-links-mode': store.sponsoredLinkGapBetween === 'Auto' ? 'space-between' : 'flex-start',
+        '--box-border-weight': store.boxWrapperBorderWeight + 'px',
+        '--box-border-color': store.boxWrapperBorderColor,
+        '--box-border-style': store.boxWrapperBorderStyle,
+        '--box-border-gap': store.boxWrapperDashedGap + 'px',
       }
     }
   }
@@ -58,5 +62,8 @@ export default {
   flex-direction: column;
   gap: var(--box-margin-between-links);
   justify-content: var(--box-margin-between-links-mode);
+
+  border: var(--box-border-weight) var(--box-border-style) var(--box-border-color);
+  border-spacing: var(--box-border-gap);
 }
 </style>
