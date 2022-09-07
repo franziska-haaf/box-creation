@@ -35,7 +35,7 @@ export default {
         '--box-border-weight': store.boxWrapperBorderWeight + 'px',
         '--box-border-color': store.boxWrapperBorderColor,
         '--box-border-style': store.boxWrapperBorderStyle,
-        '--box-border-gap': store.boxWrapperDashedGap + 'px',
+       /*Too complicated to implement vanilla: '--box-border-gap': store.boxWrapperDashedGap + 'px',*/
       }
     }
   }
@@ -64,6 +64,5 @@ export default {
   justify-content: var(--box-margin-between-links-mode);
 
   border: var(--box-border-weight) var(--box-border-style) var(--box-border-color);
-  border-spacing: var(--box-border-gap);
 }
 </style>

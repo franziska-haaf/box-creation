@@ -91,10 +91,11 @@
               <img src="../assets/icon/border-dotted.svg" alt="lorem" height="24" width="24">
             </button>
           </div>
-          <div v-if="store.boxWrapperBorderStyle === 'dashed' || store.boxWrapperBorderStyle === 'dotted'" class="hidden-input">
+<!-- Too complicated to implement vanilla:
+         <div v-if="store.boxWrapperBorderStyle === 'dashed' || store.boxWrapperBorderStyle === 'dotted'" class="hidden-input">
             <img src="../assets/icon/border-gap.svg" alt="blah" height="24" width="24">
             <input v-model="store.boxWrapperDashedGap" class="dense">
-          </div>
+          </div>-->
         </div>
       </div>
 

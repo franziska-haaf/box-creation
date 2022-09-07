@@ -25,7 +25,7 @@ export const store = reactive({
     boxWrapperBorderWeight: 2,
     boxWrapperBorderColor: '#BECE09',
     boxWrapperBorderStyle: 'solid',
-    boxWrapperDashedGap: 4,
+    /*Too complicated to implement vanilla: boxWrapperDashedGap: 4,*/
 
     /*Sponsored links*/
     sponsoredLinkPadding: 16,
