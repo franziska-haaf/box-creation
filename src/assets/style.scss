@@ -1,0 +1,114 @@
+$button-height: 56px;
+$color-white: #ffffff;
+$color-primary: #381EFF;
+$color-primary_hover: linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), #381EFF;
+$color-grey: rgba(0, 0, 0, 0.36);
+
+[class^="flex-column"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column {
+  &__4 {
+    gap: 4px;
+  }
+
+  &__8 {
+    gap: 8px;
+  }
+
+  &__16 {
+    gap: 16px;
+  }
+
+  &__24 {
+    gap: 24px;
+  }
+}
+
+input,
+select {
+  height: 56px;
+  font-size: 16px;
+  box-sizing: border-box;
+  border: 1px solid $color-grey;
+  border-radius: 4px;
+  padding: 0 12px 0 16px;
+}
+
+.small-text {
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+/*Number stuff*/
+.number-input {
+  display: flex;
+
+  .number {
+    width: $button-height ;
+    padding: 10px 16px;
+    height: 40px;
+    text-align: center;
+    box-sizing: border-box;
+    background: $color-white;
+    border-top: 1px solid $color-grey;
+    border-bottom: 1px solid $color-grey;
+  }
+
+  button {
+    width: $button-height;
+  }
+}
+
+/*Button styling*/
+button {
+  height: 40px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 0;
+  background: $color-white;
+  border: 1px solid $color-grey;
+
+  &.primary {
+    background: $color-white;
+    border: 1px solid $color-primary;
+    padding: 10px 24px;
+    color: $color-primary;
+
+    & + .primary {
+      border-left: none;
+    }
+  }
+
+  &:not(.filled):hover {
+    background: rgba(56, 30, 255, 0.08);
+    cursor: pointer;
+  }
+
+  &.filled {
+    background: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      background: $color-primary_hover;
+      cursor: pointer;
+    }
+  }
+
+  &:disabled:hover {
+    background: #fff;
+    cursor: inherit;
+
+    &:hover {
+      background: #fff;
+      cursor: inherit;
+    }
+  }
+
+  + button {
+    border-left: none;
+  }
+
+}

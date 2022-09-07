@@ -1,12 +1,12 @@
 <template>
-  <div class="flex-column-24">
+  <div class="flex-column__24">
 
-    <div class="flex-column-4">
+    <div class="flex-column__4">
       <label for="boxName">Box name</label>
       <input id="boxName" v-model="boxName" placeholder="Green is the new black">
     </div>
 
-    <div class="flex-column-4">
+    <div class="flex-column__4">
       <label for="boxSite">Site</label>
       <select id="boxSite" v-model="boxSite">
         <option disabled value="">Choose a verified site</option>
@@ -16,7 +16,7 @@
       </select>
     </div>
 
-    <div class="flex-column-4">
+    <div class="flex-column__4">
       <span>Sponsored links amount <span class="small-text">3-10</span></span>
       <div class="number-input">
         <button @click="store.decreaseSponsoredLink()" :disabled="store.sponsoredLinks === 3">-</button>
@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <div class="flex-column-4">
+    <div class="flex-column__4">
       <span>Size <span class="small-text">height x width in px</span></span>
       <div>
         <button :class="(store.boxWidth === 0 && store.boxHeight === 0)? 'primary filled' : 'primary'"
@@ -49,7 +49,7 @@
 
 <script>
 import {store} from '@/store'
-import '../assets/style.css'
+import '../assets/style.scss'
 
 export default {
   name: 'BasicData',

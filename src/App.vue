@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import './assets/style.css'
+import './assets/style.scss'
 import {store} from './store.js'
 import BasicData from './components/BasicData.vue'
 import BoxPreview from './components/BoxPreview.vue'
