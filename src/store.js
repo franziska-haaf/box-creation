@@ -31,6 +31,8 @@ export const store = reactive({
     sponsoredLinkRoundness: 400,
     sponsoredLinkPadding: 16,
     sponsoredLinkGapBetween: 'Auto',
-    sponsoredLinkGapBetweenValue: '8'
+    sponsoredLinkGapBetweenValue: '8',
+    sponsoredLinkFillStyle: 'Color',
+    sponsoredLinkFill: '#C0BCF3',
 
 })

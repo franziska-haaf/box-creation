@@ -146,6 +146,22 @@
       <!--Fill options-->
       <div class="flex-column__4">
         Fill
+        <div class="flex-row__48">
+          <div>
+            <button :class="store.sponsoredLinkFillStyle === 'Color'? ' filled img' : 'img'"
+                    @click="store.sponsoredLinkFillStyle = 'Color'">
+              <img src="../assets/icon/solid_color_fill.svg" alt="Blah">
+            </button>
+            <button disabled :class="store.sponsoredLinkFillStyle === 'Gradient'? ' filled img' : 'img'"
+                    @click="store.sponsoredLinkFillStyle = 'Gradient'">
+              <img src="../assets/icon/gradient_fill.svg" alt="Blah">
+            </button>
+          </div>
+          <div class="flex-row__8">
+            <div class="color-picker"><input type="color" v-model="store.sponsoredLinkFill"></div>
+            {{ store.sponsoredLinkFill }}
+          </div>
+        </div>
       </div>
 
       <!--Border options-->

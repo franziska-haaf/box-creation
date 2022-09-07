@@ -19,6 +19,7 @@ export default {
       return {
         '--padding': store.sponsoredLinkPadding + 'px',
         '--border-radius': store.sponsoredLinkRoundness + 'px',
+        '--fill-color': store.sponsoredLinkFill,
       }
     }
   }
@@ -29,5 +30,6 @@ export default {
   .sponsored-link{
     padding: var(--padding);
     border-radius: var(--border-radius);
+    background-color: var(--fill-color);
   }
 </style>
