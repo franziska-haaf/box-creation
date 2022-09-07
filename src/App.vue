@@ -102,7 +102,8 @@ header{
     height: 100%;
     display: flex;
     flex-direction: row;
-    gap: 48px;
+    gap: 24px;
+    overflow: hidden;
 
     > div {
       width: 50%;

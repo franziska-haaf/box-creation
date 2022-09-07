@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-column__24">
+  <div class="flex-column__24 style-tab">
     <div class="flex-row__auto">
       <div class="flex-row__8">
         <span>Show advanced</span>
@@ -91,15 +91,15 @@
               <img src="../assets/icon/border-dotted.svg" alt="lorem" height="24" width="24">
             </button>
           </div>
-<!-- Too complicated to implement vanilla:
-         <div v-if="store.boxWrapperBorderStyle === 'dashed' || store.boxWrapperBorderStyle === 'dotted'" class="hidden-input">
-            <img src="../assets/icon/border-gap.svg" alt="blah" height="24" width="24">
-            <input v-model="store.boxWrapperDashedGap" class="dense">
-          </div>-->
+          <!-- Too complicated to implement vanilla:
+                   <div v-if="store.boxWrapperBorderStyle === 'dashed' || store.boxWrapperBorderStyle === 'dotted'" class="hidden-input">
+                      <img src="../assets/icon/border-gap.svg" alt="blah" height="24" width="24">
+                      <input v-model="store.boxWrapperDashedGap" class="dense">
+                    </div>-->
         </div>
       </div>
 
-      <!--Margin options-->
+      <!--Spacing options-->
       <div class="flex-column__4">
         Spacing
         <div class="flex-row__48">
@@ -123,6 +123,46 @@
         </div>
       </div>
     </div>
+
+    <div class="flex-column__16 card">
+      <h3>Sponsored links</h3>
+      <div class="flex-row__48">
+        <div class="flex-column__4">
+          Spacing
+          <div class="hidden-input">
+            <img src="../assets/icon/margin.svg" alt="lorem" height="24" width="24">
+            <input v-model="store.sponsoredLinkPadding" class="dense">
+          </div>
+        </div>
+        <div class="flex-column__4">
+          Corner roundness
+          <div class="hidden-input">
+            <img src="../assets/icon/rounded_corner.svg" alt="blah" height="24" width="24">
+            <input v-model="store.sponsoredLinkRoundness" class="dense">
+          </div>
+        </div>
+      </div>
+
+      <!--Fill options-->
+      <div class="flex-column__4">
+        Fill
+      </div>
+
+      <!--Border options-->
+      <div class="flex-column__4">
+        Border
+      </div>
+
+      <!--Text options-->
+      <div class="flex-column__4">
+        Text
+      </div>
+
+      <!--Decoration options-->
+      <div class="flex-column__4">
+        Decoration
+      </div>
+    </div>
   </div>
 </template>
 
@@ -143,6 +183,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.style-tab{
+  overflow-y: scroll;
+  padding-right: 8px;
+}
 .card {
   background: rgba(0, 0, 0, 0.08);
   padding: 16px;

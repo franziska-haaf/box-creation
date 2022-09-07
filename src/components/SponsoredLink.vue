@@ -1,5 +1,5 @@
 <template>
-  <div class="sponsored-link">
+  <div class="sponsored-link" :style="linkStyle">
     Sponsored link
   </div>
 </template>
@@ -13,12 +13,21 @@ export default {
     return {
       store
     }
+  },
+  computed: {
+    linkStyle() {
+      return {
+        '--padding': store.sponsoredLinkPadding + 'px',
+        '--border-radius': store.sponsoredLinkRoundness + 'px',
+      }
+    }
   }
 }
 </script>
 
 <style scoped lang="scss">
   .sponsored-link{
-
+    padding: var(--padding);
+    border-radius: var(--border-radius);
   }
 </style>

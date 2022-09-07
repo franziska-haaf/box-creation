@@ -1,6 +1,6 @@
 <template>
   <div class="box-preview-wrapper">
-    <div class="box-preview" :style="boxSize">
+    <div class="box-preview" :style="boxStyle">
       <SponsoredLink v-for="amount in store.sponsoredLinks" :key="amount">
         Sponsored link
       </SponsoredLink>
@@ -23,7 +23,7 @@ export default {
     }
   },
   computed: {
-    boxSize() {
+    boxStyle() {
       return {
         '--box-height': store.boxHeight > 0 ? store.boxHeight + 'px' : '100%',
         '--box-width': store.boxWidth > 0 ? store.boxWidth + 'px' : '100%',

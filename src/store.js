@@ -28,6 +28,7 @@ export const store = reactive({
     /*Too complicated to implement vanilla: boxWrapperDashedGap: 4,*/
 
     /*Sponsored links*/
+    sponsoredLinkRoundness: 400,
     sponsoredLinkPadding: 16,
     sponsoredLinkGapBetween: 'Auto',
     sponsoredLinkGapBetweenValue: '8'
