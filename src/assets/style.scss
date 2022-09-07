@@ -7,6 +7,19 @@ $color-grey_hover: rgba(0, 0, 0, 0.04);
 $color-light-grey: rgba(0, 0, 0, 0.10);
 $color-light-grey_hover: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), rgba(0, 0, 0, 0.1);
 
+.text-small {
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.flex-grow-1{
+  flex-grow: 1;
+}
+
+.text-primary{
+  color: $color-primary;
+}
+
 [class^="flex-column"] {
   display: flex;
   flex-direction: column;
@@ -84,11 +97,6 @@ input[type="checkbox"] {
   margin: 0;
 }
 
-.small-text {
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.54);
-}
-
 /*Number stuff*/
 .number-input {
   display: flex;
@@ -112,6 +120,7 @@ input[type="checkbox"] {
 /*Button styling*/
 button {
   height: 40px;
+  font-size: 16px;
   text-align: center;
   box-sizing: border-box;
   border-radius: 0;

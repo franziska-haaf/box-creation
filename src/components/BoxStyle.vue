@@ -10,12 +10,15 @@
 
     <div class="flex-column__4">
       <label for="boxTemplate">Template</label>
-      <select id="boxTemplate" v-model="template">
-        <option disabled value="">Choose a template</option>
-        <option>Soda</option>
-        <option>Searchie</option>
-        <option>Gothic</option>
-      </select>
+      <div class="flex-row__8">
+        <select id="boxTemplate" v-model="template" class="flex-grow-1">
+          <option disabled value="">Choose a template</option>
+          <option>Soda</option>
+          <option>Searchie</option>
+          <option>Gothic</option>
+        </select>
+        <span class="text-primary">Reset changes</span>
+      </div>
     </div>
   </div>
 </template>

@@ -17,7 +17,7 @@
     </div>
 
     <div class="flex-column__4">
-      <span>Sponsored links amount <span class="small-text">3-10</span></span>
+      <span>Sponsored links amount <span class="text-small">3-10</span></span>
       <div class="number-input">
         <button @click="store.decreaseSponsoredLink()" :disabled="store.sponsoredLinks === 3">-</button>
         <div class="number">{{ store.sponsoredLinks }}</div>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="flex-column__4">
-      <span>Size <span class="small-text">height x width in px</span></span>
+      <span>Size <span class="text-small">height x width in px</span></span>
       <div>
         <button :class="(store.boxWidth === 0 && store.boxHeight === 0) && !customSize? ' filled' : ''"
                 @click="store.setBoxWidth(0); store.setBoxHeight(0); (customSize=false)">Responsive
