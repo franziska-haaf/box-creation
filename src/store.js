@@ -41,4 +41,5 @@ export const store = reactive({
     sponsoredLinkBorderStyle: 'solid',
 
     sponsoredLinkFontFamily: '"Roboto", sans-serif',
+    sponsoredLinkFontSize: 16,
 })

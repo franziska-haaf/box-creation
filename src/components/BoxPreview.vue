@@ -25,7 +25,7 @@ export default {
   computed: {
     boxStyle() {
       return {
-        '--box-height': store.boxHeight > 0 ? store.boxHeight + 'px' : '100%',
+        '--box-height': store.boxHeight > 0 ? store.boxHeight + 'px' : 'auto',
         '--box-width': store.boxWidth > 0 ? store.boxWidth + 'px' : '100%',
         '--box-border-radius': store.boxWrapperRoundness + 'px',
         '--box-bg-color': store.boxWrapperFill,

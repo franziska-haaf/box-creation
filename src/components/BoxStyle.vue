@@ -220,6 +220,10 @@
             <option>"Qwitcher Grypen", cursive</option>
             <option>"Courier Prime", monospace</option>
           </select>
+          <div class="hidden-input">
+            <img src="../assets/icon/font-size.svg" alt="blah" height="24" width="24">
+            <input v-model="store.sponsoredLinkFontSize" class="dense">
+          </div>
         </div>
       </div>
 

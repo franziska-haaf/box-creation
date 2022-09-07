@@ -28,6 +28,7 @@ export default {
         '--border-color': store.sponsoredLinkBorderColor,
         '--border-style': store.sponsoredLinkBorderStyle,
         '--font-family': store.sponsoredLinkFontFamily,
+        '--font-size': store.sponsoredLinkFontSize + 'px',
       }
     }
   }
@@ -41,6 +42,7 @@ export default {
   border-radius: var(--border-radius);
   background-color: var(--fill-color);
   border: var(--border-weight) var(--border-color) var(--border-style);
-  font-family: var(--font-family)
+  font-family: var(--font-family);
+  font-size: var(--font-size);
 }
 </style>
