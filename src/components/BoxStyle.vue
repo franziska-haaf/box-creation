@@ -176,6 +176,35 @@
       <!--Border options-->
       <div class="flex-column__4">
         Border
+        <div class="flex-row__48">
+          <div class="hidden-input">
+            <img src="../assets/icon/border-weight.svg" alt="Lorem" height="24" width="24">
+            <input v-model="store.sponsoredLinkBorderWeight" class="dense">
+          </div>
+          <div class="flex-row__8">
+            <div class="color-picker"><input type="color" v-model="store.sponsoredLinkBorderColor"></div>
+            {{ store.sponsoredLinkBorderColor }}
+          </div>
+          <div>
+            <button :class="store.sponsoredLinkBorderStyle === 'solid'? ' filled img' : 'img'"
+                    @click="store.sponsoredLinkBorderStyle = 'solid'">
+              <img src="../assets/icon/border-solid.svg" alt="lorem" height="24" width="24">
+            </button>
+            <button :class="store.sponsoredLinkBorderStyle === 'dashed'? ' filled img' : 'img'"
+                    @click="store.sponsoredLinkBorderStyle = 'dashed'">
+              <img src="../assets/icon/border-dashed.svg" alt="lorem" height="24" width="24">
+            </button>
+            <button :class="store.sponsoredLinkBorderStyle === 'dotted'? ' filled img' : 'img'"
+                    @click="store.sponsoredLinkBorderStyle = 'dotted'">
+              <img src="../assets/icon/border-dotted.svg" alt="lorem" height="24" width="24">
+            </button>
+          </div>
+          <!-- Too complicated to implement vanilla:
+                   <div v-if="store.boxWrapperBorderStyle === 'dashed' || store.boxWrapperBorderStyle === 'dotted'" class="hidden-input">
+                      <img src="../assets/icon/border-gap.svg" alt="blah" height="24" width="24">
+                      <input v-model="store.boxWrapperDashedGap" class="dense">
+                    </div>-->
+        </div>
       </div>
 
       <!--Text options-->

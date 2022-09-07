@@ -36,4 +36,7 @@ export const store = reactive({
     sponsoredLinkFillFancyness: 'Single color',
     sponsoredLinkFill: '#C0BCF3',
     sponsoredLinkAlternativeFill: '#F3C9BC',
+    sponsoredLinkBorderWeight: 2,
+    sponsoredLinkBorderColor: '#381EFF',
+    sponsoredLinkBorderStyle: 'solid'
 })
