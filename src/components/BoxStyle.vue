@@ -157,9 +157,18 @@
               <img src="../assets/icon/gradient_fill.svg" alt="Blah">
             </button>
           </div>
+          <select id="boxSite" v-model="store.sponsoredLinkFillFancyness">
+            <option disabled value="">Choose a style</option>
+            <option>Single color</option>
+            <option>Alternating</option>
+          </select>
           <div class="flex-row__8">
             <div class="color-picker"><input type="color" v-model="store.sponsoredLinkFill"></div>
             {{ store.sponsoredLinkFill }}
+          </div>
+          <div v-if="store.sponsoredLinkFillFancyness === 'Alternating'" class="flex-row__8">
+            <div class="color-picker"><input type="color" v-model="store.sponsoredLinkAlternativeFill"></div>
+            {{ store.sponsoredLinkAlternativeFill }}
           </div>
         </div>
       </div>

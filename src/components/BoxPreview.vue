@@ -1,7 +1,7 @@
 <template>
   <div class="box-preview-wrapper">
     <div class="box-preview" :style="boxStyle">
-      <SponsoredLink v-for="amount in store.sponsoredLinks" :key="amount">
+      <SponsoredLink v-for="amount in store.sponsoredLinks" :key="amount" :alternatingCounter="amount">
         Sponsored link
       </SponsoredLink>
     </div>

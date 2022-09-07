@@ -9,8 +9,12 @@ import {store} from '@/store'
 
 export default {
   name: 'SponsoredLink',
+  props: {
+    alternatingCounter: Number
+  },
   data() {
     return {
+      isAlternativeFill: (this.alternatingCounter % 2) !== 1,
       store
     }
   },
@@ -19,7 +23,7 @@ export default {
       return {
         '--padding': store.sponsoredLinkPadding + 'px',
         '--border-radius': store.sponsoredLinkRoundness + 'px',
-        '--fill-color': store.sponsoredLinkFill,
+        '--fill-color': store.sponsoredLinkFillFancyness === 'Alternating' && this.isAlternativeFill ? store.sponsoredLinkAlternativeFill : store.sponsoredLinkFill,
       }
     }
   }
@@ -27,9 +31,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .sponsored-link{
-    padding: var(--padding);
-    border-radius: var(--border-radius);
-    background-color: var(--fill-color);
-  }
+.sponsored-link {
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  background-color: var(--fill-color);
+}
 </style>
