@@ -28,21 +28,33 @@
     <div class="flex-column__4">
       <span>Size <span class="small-text">height x width in px</span></span>
       <div>
-        <button :class="(store.boxWidth === 0 && store.boxHeight === 0)? 'primary filled' : 'primary'"
-                @click="store.setBoxWidth(0); store.setBoxHeight(0)">Responsive
+        <button :class="(store.boxWidth === 0 && store.boxHeight === 0) && !customSize? 'primary filled' : 'primary'"
+                @click="store.setBoxWidth(0); store.setBoxHeight(0); (customSize=false)">Responsive
         </button>
-        <button :class="(store.boxWidth === 500 && store.boxHeight === 500)? 'primary filled' : 'primary'"
-                @click="store.setBoxWidth(500); store.setBoxHeight(500)">500 x 500
+        <button
+            :class="(store.boxWidth === 500 && store.boxHeight === 500 && !customSize)? 'primary filled' : 'primary'"
+            @click="store.setBoxWidth(500); store.setBoxHeight(500); (customSize=false)">500 x 500
         </button>
-        <button :class="(store.boxWidth === 400 && store.boxHeight === 800)? 'primary filled' : 'primary'"
-                @click="store.setBoxWidth(400); store.setBoxHeight(800)">400 x 800
+        <button
+            :class="(store.boxWidth === 400 && store.boxHeight === 800 && !customSize)? 'primary filled' : 'primary'"
+            @click="store.setBoxWidth(400); store.setBoxHeight(800); (customSize=false)">400 x 800
         </button>
-        <button :class="(store.boxWidth === 600 && store.boxHeight === 400)? 'primary filled' : 'primary'"
-                @click="store.setBoxWidth(600); store.setBoxHeight(400)">600 x 400
+        <button
+            :class="(store.boxWidth === 600 && store.boxHeight === 400 && !customSize)? 'primary filled' : 'primary'"
+            @click="store.setBoxWidth(600); store.setBoxHeight(400); (customSize=false)">600 x 400
         </button>
-
+        <button :class="customSize? 'primary filled' : 'primary'"
+                @click="(customSize=true)">Custom
+        </button>
+      </div>
+      <div v-if="customSize">
+        <input type="number" placeholder="Height in px" v-model="store.boxHeight">
+        height
+        <input type="number" placeholder="Width in px" v-model="store.boxWidth">
+        width
       </div>
     </div>
+
   </div>
 
 </template>
@@ -58,6 +70,7 @@ export default {
     },*/
   data() {
     return {
+      customSize: false,
       boxName: '',
       boxSite: '',
       store
