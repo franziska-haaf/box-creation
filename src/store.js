@@ -29,6 +29,7 @@ export const store = reactive({
 
     /*Sponsored links*/
     sponsoredLinkPadding: 16,
-    sponsoredLinkGapBetween: 8,
+    sponsoredLinkGapBetween: 'Auto',
+    sponsoredLinkGapBetweenValue: '8'
 
 })

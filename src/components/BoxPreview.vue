@@ -30,6 +30,8 @@ export default {
         '--box-border-radius': store.boxWrapperRoundness + 'px',
         '--box-bg-color': store.boxWrapperFill,
         '--box-padding': store.boxWrapperPadding + 'px',
+        '--box-margin-between-links': store.sponsoredLinkGapBetweenValue + 'px',
+        '--box-margin-between-links-mode': store.sponsoredLinkGapBetween === 'Auto' ? 'space-between' : 'flex-start'
       }
     }
   }
@@ -51,5 +53,10 @@ export default {
   border-radius: var(--box-border-radius);
   padding: var(--box-padding);
   box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--box-margin-between-links);
+  justify-content: var(--box-margin-between-links-mode);
 }
 </style>

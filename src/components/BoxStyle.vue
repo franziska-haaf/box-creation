@@ -71,12 +71,20 @@
       <!--Margin options-->
       <div class="flex-column__4">
         Spacing
-       <div class="flex-column__48">
+       <div class="flex-row__48">
          <div class="hidden-input">
            <img src="../assets/icon/margin.svg" alt="A rectangle with 1 rounded corner" height="24" width="24">
            <input v-model="store.boxWrapperPadding" class="dense">
          </div>
-         <div>Blah</div>
+         <div>
+           Between links
+           <button :class="store.sponsoredLinkGapBetween === 'Auto'? ' filled' : ''" @click="store.sponsoredLinkGapBetween = 'Auto'; manualGapBetweenLinks = false">Auto</button>
+           <button :class="store.sponsoredLinkGapBetween === 'Manual'? ' filled' : ''" @click="store.sponsoredLinkGapBetween = 'Manual'; manualGapBetweenLinks = true">Manual</button>
+         </div>
+         <div v-if="manualGapBetweenLinks" class="hidden-input">
+             <img src="../assets/icon/margin_between_links.svg" alt="blah" height="24" width="24">
+             <input v-model="store.sponsoredLinkGapBetweenValue" class="dense">
+         </div>
        </div>
       </div>
     </div>
@@ -91,6 +99,7 @@ export default {
   data() {
     return {
       showAdvanced: true,
+      manualGapBetweenLinks: false,
       template: 'Soda',
       store
     }

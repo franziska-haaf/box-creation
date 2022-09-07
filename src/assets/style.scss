@@ -201,7 +201,7 @@ button {
     }
 
     &:disabled:hover {
-      background: $color-primary;
+      background: transparent;
       cursor: inherit;
     }
 
