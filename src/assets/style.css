@@ -102,3 +102,8 @@ button:disabled:hover{
     background: #fff;
     cursor: inherit;
 }
+
+button + button,
+button.primary + button.primary{
+    border-left: none;
+}
