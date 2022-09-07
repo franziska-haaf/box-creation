@@ -26,7 +26,8 @@ export default {
     boxSize() {
       return {
         '--box-height': store.boxHeight > 0 ? store.boxHeight + 'px' : '100%',
-        '--box-width': store.boxWidth > 0 ? store.boxWidth + 'px' : '100%'
+        '--box-width': store.boxWidth > 0 ? store.boxWidth + 'px' : '100%',
+        '--box-border-radius': store.boxWrapperRoundness + 'px',
       }
     }
   }
@@ -45,5 +46,6 @@ export default {
   max-width: 100%;
   height: var(--box-height);
   width: var(--box-width);
+  border-radius: var(--box-border-radius);
 }
 </style>

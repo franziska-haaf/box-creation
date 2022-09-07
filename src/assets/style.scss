@@ -7,7 +7,7 @@ $color-grey_hover: rgba(0, 0, 0, 0.04);
 $color-light-grey: rgba(0, 0, 0, 0.10);
 $color-light-grey_hover: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), rgba(0, 0, 0, 0.1);
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
@@ -16,15 +16,15 @@ h1, h2, h3, h4, h5, h6{
   color: rgba(0, 0, 0, 0.54);
 }
 
-.flex-grow-1{
+.flex-grow-1 {
   flex-grow: 1;
 }
 
-.text-primary{
+.text-primary {
   color: $color-primary;
 }
 
-[class^="flex-column"] {
+[class*="flex-column"] {
   display: flex;
   flex-direction: column;
 }
@@ -46,12 +46,20 @@ h1, h2, h3, h4, h5, h6{
     gap: 24px;
   }
 
-  &__auto{
+  &_32 {
+    gap: 24px;
+  }
+
+  &__48 {
+    gap: 24px;
+  }
+
+  &__auto {
     justify-content: space-between;
   }
 }
 
-[class^="flex-row"] {
+[class*="flex-row"] {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -74,11 +82,18 @@ h1, h2, h3, h4, h5, h6{
     gap: 24px;
   }
 
-  &__auto{
+  &_32 {
+    gap: 24px;
+  }
+
+  &__48 {
+    gap: 24px;
+  }
+
+  &__auto {
     justify-content: space-between;
   }
 }
-
 
 input:not([type=checkbox]),
 select {
@@ -88,6 +103,7 @@ select {
   border: 1px solid $color-grey;
   border-radius: 4px;
   padding: 0 12px 0 16px;
+  background-color: transparent;
 
   & + input, & + select {
     margin-left: 8px;
@@ -101,19 +117,26 @@ input[type="checkbox"] {
   margin: 0;
 }
 
+input.dense{
+  height: 40px;
+}
+
 /*Number stuff*/
 .number-input {
   display: flex;
 
-  .number {
-    width: $button-height;
+  .number, input[type='number'].number {
+    width: $button-height + 8;
     padding: 10px 16px;
     height: 40px;
     text-align: center;
     box-sizing: border-box;
-    background: $color-white;
+    background: transparent;
     border-top: 1px solid $color-grey;
     border-bottom: 1px solid $color-grey;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
   }
 
   button {
@@ -168,6 +191,7 @@ button {
         cursor: pointer;
       }
     }
+
     &:disabled:hover {
       background: $color-primary;
       cursor: inherit;
