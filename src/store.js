@@ -38,5 +38,7 @@ export const store = reactive({
     sponsoredLinkAlternativeFill: '#F3C9BC',
     sponsoredLinkBorderWeight: 2,
     sponsoredLinkBorderColor: '#381EFF',
-    sponsoredLinkBorderStyle: 'solid'
+    sponsoredLinkBorderStyle: 'solid',
+
+    sponsoredLinkFontFamily: '"Roboto", sans-serif',
 })

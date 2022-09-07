@@ -210,6 +210,14 @@
       <!--Text options-->
       <div class="flex-column__4">
         Text
+        <div class="flex-row__48">
+          <select id="fontFamily" v-model="store.sponsoredLinkFontFamily">
+            <option disabled value="">Choose a verified site</option>
+            <option>"Roboto", sans-serif</option>
+            <option>"Qwitcher Grypen", cursive</option>
+            <option>"Courier Prime", monospace</option>
+          </select>
+        </div>
       </div>
 
       <!--Decoration options-->
