@@ -157,11 +157,14 @@
               <img src="../assets/icon/gradient_fill.svg" alt="Blah">
             </button>
           </div>
-          <select id="boxSite" v-model="store.sponsoredLinkFillFancyness">
-            <option disabled value="">Choose a style</option>
-            <option>Single color</option>
-            <option>Alternating</option>
-          </select>
+          <div class="hidden-input">
+            <select id="boxSite" v-model="store.sponsoredLinkFillFancyness">
+              <option disabled value="">Choose a style</option>
+              <option>Single color</option>
+              <option>Alternating</option>
+            </select>
+          </div>
+
           <div class="flex-row__8">
             <div class="color-picker"><input type="color" v-model="store.sponsoredLinkFill"></div>
             {{ store.sponsoredLinkFill }}
@@ -210,7 +213,7 @@
       <!--Text options-->
       <div class="flex-column__4">
         Text
-        <div class="flex-row__48">
+        <div class="flex-row__48 hidden-input">
           <select id="fontFamily" v-model="store.sponsoredLinkFontFamily">
             <option disabled value="">Choose a verified site</option>
             <option>"Roboto", sans-serif</option>
@@ -262,10 +265,13 @@ export default {
 .hidden-input {
   position: relative;
 
-  input {
+  input,
+  select{
     border: none;
-    padding-left: 32px;
+  }
+  input{
     width: 80px;
+    padding-left: 32px;
   }
 
   img {
