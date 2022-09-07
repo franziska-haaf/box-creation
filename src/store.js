@@ -20,9 +20,10 @@ export const store = reactive({
     boxWrapperRoundness: 16,
     boxWrapperPadding: 16,
     boxColumns: 1,
-    boxWrapperFill: 'F8FFA8',
+    boxWrapperFillStyle: 'Color',
+    boxWrapperFill: '#F8FFA8',
     boxWrapperBorderWeight: 2,
-    boxWrapperBorderColor: 'BECE09',
+    boxWrapperBorderColor: '#BECE09',
     boxWrapperStyle: 'solid',
     boxWrapperDashedGap: 4,
 

@@ -28,6 +28,7 @@ export default {
         '--box-height': store.boxHeight > 0 ? store.boxHeight + 'px' : '100%',
         '--box-width': store.boxWidth > 0 ? store.boxWidth + 'px' : '100%',
         '--box-border-radius': store.boxWrapperRoundness + 'px',
+        '--box-bg-color': store.boxWrapperFill,
       }
     }
   }
@@ -41,7 +42,7 @@ export default {
 }
 
 .box-preview {
-  background-color: pink;
+  background-color: var(--box-bg-color);
   max-height: 100%;
   max-width: 100%;
   height: var(--box-height);

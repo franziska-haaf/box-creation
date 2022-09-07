@@ -3,7 +3,7 @@
 
     <div class="flex-column__4">
       <label for="boxName">Box name</label>
-      <input id="boxName" v-model="boxName" placeholder="Green is the new black">
+      <input type="text" id="boxName" v-model="boxName" placeholder="Green is the new black">
     </div>
 
     <div class="flex-column__4">

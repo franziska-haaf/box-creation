@@ -23,23 +23,47 @@
 
     <div class="flex-column__16 card">
       <h3>Wrapper</h3>
-  <div class="flex-row__24">
-    <div class="flex-column__4">
-      Columns
-      <div>
-        <button :class="store.boxColumns === 1? ' filled' : ''" @click="store.boxColumns = 1">1</button>
-        <button :class="store.boxColumns === 2? ' filled' : ''" @click="store.boxColumns = 2">2</button>
-        <button :class="store.boxColumns === 3? ' filled' : ''" @click="store.boxColumns = 3">3</button>
+      <div class="flex-row__24">
+        <div class="flex-column__4">
+          Columns
+          <div>
+            <button :class="store.boxColumns === 1? ' filled img' : 'img'" @click="store.boxColumns = 1">1</button>
+            <button :class="store.boxColumns === 2? ' filled img' : 'img'" @click="store.boxColumns = 2">2</button>
+            <button :class="store.boxColumns === 3? ' filled img' : 'img'" @click="store.boxColumns = 3">3</button>
+          </div>
+        </div>
+        <div class="flex-column__4">
+          Corner roundness
+          <div class="hidden-input">
+            <img src="../assets/icon/rounded_corner.svg" alt="A rectangle with 1 rounded corner" height="24" width="24">
+            <input v-model="store.boxWrapperRoundness" class="dense">
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="flex-column__4">
-      Corner roundness
-      <div class="hidden-input">
-        <img src="../assets/icon/rounded_corner.svg" alt="A rectangle with 1 rounded corner" height="24" width="24">
-        <input v-model="store.boxWrapperRoundness" class="dense">
+      <!--Fill options-->
+      <div class="flex-column__4">
+        Fill
+        <div class="flex-row__48">
+          <div>
+            <button :class="store.boxWrapperFillStyle === 'Color'? ' filled img' : 'img'"
+                    @click="store.boxWrapperFillStyle = 'Color'">
+              <img src="../assets/icon/solid_color_fill.svg" alt="Blah">
+            </button>
+            <button disabled :class="store.boxWrapperFillStyle === 'Gradient'? ' filled img' : 'img'"
+                    @click="store.boxWrapperFillStyle = 'Gradient'">
+              <img src="../assets/icon/gradient_fill.svg" alt="Blah">
+            </button>
+            <button disabled :class="store.boxWrapperFillStyle === 'Image'? ' filled img' : 'img'"
+                    @click="store.boxWrapperFillStyle = 'Image'">
+              <img src="../assets/icon/img_fill.svg" alt="Blah">
+            </button>
+          </div>
+          <div class="flex-row__8">
+            <div class="color-picker"><input type="color" v-model="store.boxWrapperFill"></div>
+            {{store.boxWrapperFill}}
+            </div>
+        </div>
       </div>
-    </div>
-  </div>
     </div>
   </div>
 </template>
@@ -72,15 +96,32 @@ export default {
 
 .hidden-input {
   position: relative;
+
   input {
     border: none;
     padding-left: 32px;
     width: 80px;
   }
-  img{
+
+  img {
     position: absolute;
     left: 4px;
     top: 6px;
+  }
+}
+
+.color-picker{
+  height: 32px;
+  width: 32px;
+  border-radius: 400px;
+  overflow: hidden;
+  input[type=color]{
+    margin-left: -8px;
+    margin-top: -8px;
+    border: none;
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
   }
 }
 </style>
