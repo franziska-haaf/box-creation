@@ -8,8 +8,8 @@ export const store = reactive({
     decreaseSponsoredLink() {
         this.sponsoredLinks > 3 ? this.sponsoredLinks -- : ''
     },
-    boxHeight: 700,
-    boxWidth: 400,
+    boxHeight: 0,
+    boxWidth: 0,
     setBoxHeight(boxHeight){
         this.boxHeight = boxHeight
     },

@@ -17,10 +17,10 @@ export default {
     }
   },
   computed: {
-    boxSize () {
-      return{
-        '--box-height': store.boxHeight + 'px',
-        '--box-width': store.boxWidth + 'px'
+    boxSize() {
+      return {
+        '--box-height': store.boxHeight > 0 ? store.boxHeight + 'px' : '100%',
+        '--box-width': store.boxWidth > 0 ? store.boxWidth + 'px' : '100%'
       }
     }
   }
@@ -29,7 +29,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.box-preview-wrapper{
+.box-preview-wrapper {
   overflow: hidden;
 }
 

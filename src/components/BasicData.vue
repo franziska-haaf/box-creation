@@ -20,16 +20,27 @@
       <span>Sponsored links amount <span class="small-text">3-10</span></span>
       <div class="number-input">
         <button @click="store.decreaseSponsoredLink()" :disabled="store.sponsoredLinks === 3">-</button>
-        <div class="number">{{store.sponsoredLinks}}</div>
-        <button @click="store.increaseSponsoredLink()"  :disabled="store.sponsoredLinks === 10">+</button>
+        <div class="number">{{ store.sponsoredLinks }}</div>
+        <button @click="store.increaseSponsoredLink()" :disabled="store.sponsoredLinks === 10">+</button>
       </div>
     </div>
 
     <div class="flex-column-4">
-      <span>Size</span>
+      <span>Size <span class="small-text">height x width in px</span></span>
       <div>
-        <button @click="store.setBoxWidth(400); store.setBoxHeight(400)">400 x 400</button>
-        <button @click="store.setBoxWidth(800); store.setBoxHeight(800)">800 x 800</button>
+        <button :class="(store.boxWidth === 0 && store.boxHeight === 0)? 'primary filled' : 'primary'"
+                @click="store.setBoxWidth(0); store.setBoxHeight(0)">Responsive
+        </button>
+        <button :class="(store.boxWidth === 500 && store.boxHeight === 500)? 'primary filled' : 'primary'"
+                @click="store.setBoxWidth(500); store.setBoxHeight(500)">500 x 500
+        </button>
+        <button :class="(store.boxWidth === 400 && store.boxHeight === 800)? 'primary filled' : 'primary'"
+                @click="store.setBoxWidth(400); store.setBoxHeight(800)">400 x 800
+        </button>
+        <button :class="(store.boxWidth === 600 && store.boxHeight === 400)? 'primary filled' : 'primary'"
+                @click="store.setBoxWidth(600); store.setBoxHeight(400)">600 x 400
+        </button>
+
       </div>
     </div>
   </div>
@@ -37,8 +48,8 @@
 </template>
 
 <script>
-import { store } from '@/store'
-import  '../assets/style.css'
+import {store} from '@/store'
+import '../assets/style.css'
 
 export default {
   name: 'BasicData',
