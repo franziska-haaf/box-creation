@@ -3,6 +3,9 @@ $color-white: #ffffff;
 $color-primary: #381EFF;
 $color-primary_hover: linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), #381EFF;
 $color-grey: rgba(0, 0, 0, 0.36);
+$color-grey_hover: rgba(0, 0, 0, 0.04);
+$color-light-grey: rgba(0, 0, 0, 0.10);
+$color-light-grey_hover: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), rgba(0, 0, 0, 0.1);
 
 [class^="flex-column"] {
   display: flex;
@@ -35,7 +38,8 @@ select {
   border: 1px solid $color-grey;
   border-radius: 4px;
   padding: 0 12px 0 16px;
-  & + input, & + select{
+
+  & + input, & + select {
     margin-left: 8px;
   }
 }
@@ -50,7 +54,7 @@ select {
   display: flex;
 
   .number {
-    width: $button-height ;
+    width: $button-height;
     padding: 10px 16px;
     height: 40px;
     text-align: center;
@@ -73,31 +77,20 @@ button {
   border-radius: 0;
   background: $color-white;
   border: 1px solid $color-grey;
+  padding: 10px 24px;
 
-  &.primary {
-    background: $color-white;
-    border: 1px solid $color-primary;
-    padding: 10px 24px;
-    color: $color-primary;
+  &.filled {
+    background: $color-light-grey;
 
-    & + .primary {
-      border-left: none;
+    &:hover {
+      background: $color-light-grey_hover;
+      cursor: pointer;
     }
   }
 
   &:not(.filled):hover {
-    background: rgba(56, 30, 255, 0.08);
+    background: $color-grey_hover;
     cursor: pointer;
-  }
-
-  &.filled {
-    background: $color-primary;
-    color: $color-white;
-
-    &:hover {
-      background: $color-primary_hover;
-      cursor: pointer;
-    }
   }
 
   &:disabled:hover {
@@ -112,6 +105,25 @@ button {
 
   + button {
     border-left: none;
+  }
+
+  &.primary {
+    border-color: $color-primary;
+    color: $color-primary;
+
+    &.filled {
+      background: $color-primary;
+      color: $color-white;
+
+      &:hover {
+        background: $color-primary_hover;
+        cursor: pointer;
+      }
+    }
+
+    & + .primary {
+      border-left: none;
+    }
   }
 
 }

@@ -28,22 +28,22 @@
     <div class="flex-column__4">
       <span>Size <span class="small-text">height x width in px</span></span>
       <div>
-        <button :class="(store.boxWidth === 0 && store.boxHeight === 0) && !customSize? 'primary filled' : 'primary'"
+        <button :class="(store.boxWidth === 0 && store.boxHeight === 0) && !customSize? ' filled' : ''"
                 @click="store.setBoxWidth(0); store.setBoxHeight(0); (customSize=false)">Responsive
         </button>
         <button
-            :class="(store.boxWidth === 500 && store.boxHeight === 500 && !customSize)? 'primary filled' : 'primary'"
+            :class="(store.boxWidth === 500 && store.boxHeight === 500 && !customSize)? ' filled' : ''"
             @click="store.setBoxWidth(500); store.setBoxHeight(500); (customSize=false)">500 x 500
         </button>
         <button
-            :class="(store.boxWidth === 400 && store.boxHeight === 800 && !customSize)? 'primary filled' : 'primary'"
+            :class="(store.boxWidth === 400 && store.boxHeight === 800 && !customSize)? ' filled' : ''"
             @click="store.setBoxWidth(400); store.setBoxHeight(800); (customSize=false)">400 x 800
         </button>
         <button
-            :class="(store.boxWidth === 600 && store.boxHeight === 400 && !customSize)? 'primary filled' : 'primary'"
+            :class="(store.boxWidth === 600 && store.boxHeight === 400 && !customSize)? ' filled' : ''"
             @click="store.setBoxWidth(600); store.setBoxHeight(400); (customSize=false)">600 x 400
         </button>
-        <button :class="customSize? 'primary filled' : 'primary'"
+        <button :class="customSize? ' filled' : ''"
                 @click="(customSize=true)">Custom
         </button>
       </div>
