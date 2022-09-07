@@ -1,7 +1,10 @@
 <template>
   <div class="content">
-    <header>
-      <h1>New Box </h1>
+    <header class="flex-column__16">
+      <div class="flex-row__8">
+        <button class="primary filled" disabled>X</button>
+        <h1>New Box </h1>
+      </div>
       <div class="tabs">
         <button
             v-for="tab in tabs"
@@ -68,11 +71,17 @@ body {
   padding: 0;
 }
 
+header{
+  width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.12);
+  padding: 32px 32px 0;
+}
+
 .content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 32px;
+
   gap: 24px;
   box-sizing: border-box;
 
@@ -86,6 +95,7 @@ body {
   flex-grow: 0;
 
   main {
+    padding: 0px 32px 32px;
     width: 100%;
     height: 100%;
     display: flex;

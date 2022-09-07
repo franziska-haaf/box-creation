@@ -20,6 +20,11 @@
         <span class="text-primary">Reset changes</span>
       </div>
     </div>
+
+    <div class="card flex-row-16">
+      <h3>Wrapper</h3>
+      <div>Stuff</div>
+    </div>
   </div>
 </template>
 
@@ -38,6 +43,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.card {
+  background: rgba(0,0,0,0.08);
+  padding: 16px;
 
+  > div:not(:last-child){
+    border-bottom: 2px solid rgba(0,0,0,0.12);
+  }
+}
 </style>

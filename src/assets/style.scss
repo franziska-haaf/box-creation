@@ -7,6 +7,10 @@ $color-grey_hover: rgba(0, 0, 0, 0.04);
 $color-light-grey: rgba(0, 0, 0, 0.10);
 $color-light-grey_hover: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), rgba(0, 0, 0, 0.1);
 
+h1, h2, h3, h4, h5, h6{
+  margin: 0;
+}
+
 .text-small {
   font-size: 11px;
   color: rgba(0, 0, 0, 0.54);
@@ -163,6 +167,10 @@ button {
         background: $color-primary_hover;
         cursor: pointer;
       }
+    }
+    &:disabled:hover {
+      background: $color-primary;
+      cursor: inherit;
     }
 
     & + .primary {
