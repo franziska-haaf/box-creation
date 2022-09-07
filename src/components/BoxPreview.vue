@@ -1,16 +1,22 @@
 <template>
   <div class="box-preview-wrapper">
     <div class="box-preview" :style="boxSize">
-      Box preview
+      <SponsoredLink v-for="amount in store.sponsoredLinks" :key="amount">
+        Sponsored link
+      </SponsoredLink>
     </div>
   </div>
 </template>
 
 <script>
 import {store} from '@/store'
+import SponsoredLink from './SponsoredLink'
 
 export default {
   name: 'BoxPreview',
+  components: {
+    SponsoredLink
+  },
   data() {
     return {
       store
