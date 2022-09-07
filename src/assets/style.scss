@@ -28,9 +28,42 @@ $color-light-grey_hover: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0
   &__24 {
     gap: 24px;
   }
+
+  &__auto{
+    justify-content: space-between;
+  }
 }
 
-input,
+[class^="flex-row"] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-row {
+  &__4 {
+    gap: 4px;
+  }
+
+  &__8 {
+    gap: 8px;
+  }
+
+  &__16 {
+    gap: 16px;
+  }
+
+  &__24 {
+    gap: 24px;
+  }
+
+  &__auto{
+    justify-content: space-between;
+  }
+}
+
+
+input:not([type=checkbox]),
 select {
   height: 56px;
   font-size: 16px;
@@ -42,6 +75,13 @@ select {
   & + input, & + select {
     margin-left: 8px;
   }
+}
+
+input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  margin: 0;
 }
 
 .small-text {
@@ -75,7 +115,7 @@ button {
   text-align: center;
   box-sizing: border-box;
   border-radius: 0;
-  background: $color-white;
+  background: transparent;
   border: 1px solid $color-grey;
   padding: 10px 24px;
 
@@ -94,13 +134,8 @@ button {
   }
 
   &:disabled:hover {
-    background: #fff;
+    background: transparent;
     cursor: inherit;
-
-    &:hover {
-      background: #fff;
-      cursor: inherit;
-    }
   }
 
   + button {

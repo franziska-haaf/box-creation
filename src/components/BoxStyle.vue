@@ -1,35 +1,40 @@
 <template>
-<div>
-  Box style tab
-</div>
+  <div class="flex-column__24">
+    <div class="flex-row__auto">
+      <div class="flex-row__8">
+        <span>Show advanced</span>
+        <input type="checkbox" v-model="showAdvanced">
+      </div>
+      <button class="primary" disabled>Save design as template</button>
+    </div>
+
+    <div class="flex-column__4">
+      <label for="boxTemplate">Template</label>
+      <select id="boxTemplate" v-model="template">
+        <option disabled value="">Choose a template</option>
+        <option>Soda</option>
+        <option>Searchie</option>
+        <option>Gothic</option>
+      </select>
+    </div>
+  </div>
 </template>
 
 <script>
+import {store} from "@/store";
+
 export default {
   name: 'BoxStyle',
-  props: {
-    msg: String
+  data() {
+    return {
+      showAdvanced: true,
+      template: 'Soda',
+      store
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
