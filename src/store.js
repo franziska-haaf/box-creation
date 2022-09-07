@@ -42,4 +42,9 @@ export const store = reactive({
 
     sponsoredLinkFontFamily: '"Roboto", sans-serif',
     sponsoredLinkFontSize: 16,
+    sponsoredLinkFontIsBold: false,
+    sponsoredLinkFontIsItalic: false,
+    sponsoredLinkFontIsUnderlined: false,
+    sponsoredLinkFontIsCaps: false,
+
 })

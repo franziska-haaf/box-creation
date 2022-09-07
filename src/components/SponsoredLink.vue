@@ -29,6 +29,10 @@ export default {
         '--border-style': store.sponsoredLinkBorderStyle,
         '--font-family': store.sponsoredLinkFontFamily,
         '--font-size': store.sponsoredLinkFontSize + 'px',
+        '--font-caps': store.sponsoredLinkFontIsCaps ? 'uppercase' : 'none',
+        '--font-is-bold': store.sponsoredLinkFontIsBold ? '700' : '400',
+        '--font-italic': store.sponsoredLinkFontIsItalic ? 'italic': 'normal',
+        '--font-underlined': store.sponsoredLinkFontIsUnderlined ? 'underline': 'none',
       }
     }
   }
@@ -44,5 +48,9 @@ export default {
   border: var(--border-weight) var(--border-color) var(--border-style);
   font-family: var(--font-family);
   font-size: var(--font-size);
+  text-transform: var(--font-caps);
+  font-weight: var(--font-is-bold);
+  font-style: var(--font-italic);
+  text-decoration: var(--font-underlined);
 }
 </style>

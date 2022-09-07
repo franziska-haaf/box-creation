@@ -213,16 +213,36 @@
       <!--Text options-->
       <div class="flex-column__4">
         Text
-        <div class="flex-row__48 hidden-input">
-          <select id="fontFamily" v-model="store.sponsoredLinkFontFamily">
-            <option disabled value="">Choose a verified site</option>
-            <option>"Roboto", sans-serif</option>
-            <option>"Qwitcher Grypen", cursive</option>
-            <option>"Courier Prime", monospace</option>
-          </select>
+        <div class="flex-row__48">
+          <div class=" hidden-input">
+            <select id="fontFamily" v-model="store.sponsoredLinkFontFamily">
+              <option disabled value="">Choose a verified site</option>
+              <option>"Roboto", sans-serif</option>
+              <option>"Qwitcher Grypen", cursive</option>
+              <option>"Courier Prime", monospace</option>
+            </select>
+          </div>
           <div class="hidden-input">
             <img src="../assets/icon/font-size.svg" alt="blah" height="24" width="24">
             <input v-model="store.sponsoredLinkFontSize" class="dense">
+          </div>
+          <div>
+            <button :class="store.sponsoredLinkFontIsBold ? ' filled img' : 'img'"
+                    @click="store.sponsoredLinkFontIsBold = !store.sponsoredLinkFontIsBold">
+              <img src="../assets/icon/font-bold.svg" alt="Blah">
+            </button>
+            <button :class="store.sponsoredLinkFontIsItalic ? ' filled img' : 'img'"
+                    @click="store.sponsoredLinkFontIsItalic = !store.sponsoredLinkFontIsItalic">
+              <img src="../assets/icon/font-italic.svg" alt="Blah">
+            </button>
+            <button :class="store.sponsoredLinkFontIsUnderlined ? ' filled img' : 'img'"
+                    @click="store.sponsoredLinkFontIsUnderlined = !store.sponsoredLinkFontIsUnderlined">
+              <img src="../assets/icon/font-underlined.svg" alt="Blah">
+            </button>
+            <button :class="store.sponsoredLinkFontIsCaps ? ' filled img' : 'img'"
+                    @click="store.sponsoredLinkFontIsCaps = !store.sponsoredLinkFontIsCaps">
+              <img src="../assets/icon/font-caps.svg" alt="Blah">
+            </button>
           </div>
         </div>
       </div>
@@ -252,10 +272,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.style-tab{
+.style-tab {
   overflow-y: scroll;
   padding-right: 8px;
 }
+
 .card {
   background: rgba(0, 0, 0, 0.08);
   padding: 16px;
@@ -270,10 +291,11 @@ export default {
   position: relative;
 
   input,
-  select{
+  select {
     border: none;
   }
-  input{
+
+  input {
     width: 80px;
     padding-left: 32px;
   }
