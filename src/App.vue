@@ -75,6 +75,7 @@ header{
   width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.12);
   padding: 32px 32px 0;
+  box-sizing: border-box;
 }
 
 .content {
@@ -95,7 +96,8 @@ header{
   flex-grow: 0;
 
   main {
-    padding: 0px 32px 32px;
+    box-sizing: border-box;
+    padding: 0 32px 32px;
     width: 100%;
     height: 100%;
     display: flex;
