@@ -64,6 +64,21 @@
             </div>
         </div>
       </div>
+
+      <!--Border options-->
+      <div>Border options todo</div>
+
+      <!--Margin options-->
+      <div class="flex-column__4">
+        Spacing
+       <div class="flex-column__48">
+         <div class="hidden-input">
+           <img src="../assets/icon/margin.svg" alt="A rectangle with 1 rounded corner" height="24" width="24">
+           <input v-model="store.boxWrapperPadding" class="dense">
+         </div>
+         <div>Blah</div>
+       </div>
+      </div>
     </div>
   </div>
 </template>
@@ -106,7 +121,7 @@ export default {
   img {
     position: absolute;
     left: 4px;
-    top: 6px;
+    top: 8px;
   }
 }
 

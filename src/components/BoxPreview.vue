@@ -29,6 +29,7 @@ export default {
         '--box-width': store.boxWidth > 0 ? store.boxWidth + 'px' : '100%',
         '--box-border-radius': store.boxWrapperRoundness + 'px',
         '--box-bg-color': store.boxWrapperFill,
+        '--box-padding': store.boxWrapperPadding + 'px',
       }
     }
   }
@@ -48,5 +49,7 @@ export default {
   height: var(--box-height);
   width: var(--box-width);
   border-radius: var(--box-border-radius);
+  padding: var(--box-padding);
+  box-sizing: border-box;
 }
 </style>
