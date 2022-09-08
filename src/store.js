@@ -46,5 +46,6 @@ export const store = reactive({
     sponsoredLinkFontIsItalic: false,
     sponsoredLinkFontIsUnderlined: false,
     sponsoredLinkFontIsCaps: false,
+    sponsoredLinkTextAlignment: 'left',
 
 })

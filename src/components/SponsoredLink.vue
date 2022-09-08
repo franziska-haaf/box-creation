@@ -33,6 +33,7 @@ export default {
         '--font-is-bold': store.sponsoredLinkFontIsBold ? '700' : '400',
         '--font-italic': store.sponsoredLinkFontIsItalic ? 'italic': 'normal',
         '--font-underlined': store.sponsoredLinkFontIsUnderlined ? 'underline': 'none',
+        '--font-align': store.sponsoredLinkTextAlignment,
       }
     }
   }
@@ -52,5 +53,6 @@ export default {
   font-weight: var(--font-is-bold);
   font-style: var(--font-italic);
   text-decoration: var(--font-underlined);
+  text-align: var(--font-align);
 }
 </style>

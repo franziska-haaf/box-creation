@@ -226,6 +226,22 @@
             <img src="../assets/icon/font-size.svg" alt="blah" height="24" width="24">
             <input v-model="store.sponsoredLinkFontSize" class="dense">
           </div>
+        </div>
+        <div class="flex-row__48">
+          <div>
+            <button :class="store.sponsoredLinkTextAlignment === 'left'? ' filled img' : 'img'"
+                    @click="store.sponsoredLinkTextAlignment = 'left'">
+              <img src="../assets/icon/format_align_left.svg" alt="lorem" height="24" width="24">
+            </button>
+            <button :class="store.sponsoredLinkTextAlignment === 'center'? ' filled img' : 'img'"
+                    @click="store.sponsoredLinkTextAlignment = 'center'">
+              <img src="../assets/icon/format_align_center.svg" alt="lorem" height="24" width="24">
+            </button>
+            <button :class="store.sponsoredLinkTextAlignment === 'right'? ' filled img' : 'img'"
+                    @click="store.sponsoredLinkTextAlignment = 'right'">
+              <img src="../assets/icon/format_align_right.svg" alt="lorem" height="24" width="24">
+            </button>
+          </div>
           <div>
             <button :class="store.sponsoredLinkFontIsBold ? ' filled img' : 'img'"
                     @click="store.sponsoredLinkFontIsBold = !store.sponsoredLinkFontIsBold">
@@ -245,6 +261,7 @@
             </button>
           </div>
         </div>
+
       </div>
 
       <!--Decoration options-->
