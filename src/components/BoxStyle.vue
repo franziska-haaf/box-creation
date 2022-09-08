@@ -271,6 +271,7 @@
             <select id="textDecoration" v-model="store.sponsoredTextDecoration">
               <option>None</option>
               <option>List</option>
+              <option>Fancy border</option>
             </select>
           </div>
           <div v-if="store.sponsoredTextDecoration === 'List'" class="flex-row__48">

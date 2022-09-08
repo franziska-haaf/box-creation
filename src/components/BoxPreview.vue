@@ -1,6 +1,8 @@
 <template>
   <div class="box-preview-wrapper">
-    <div :class="'box-preview ' + 'columns-is-'+ store.boxColumns" :style="boxStyle">
+    <div
+        :class="'box-preview ' + 'columns-is-'+ store.boxColumns + (store.sponsoredTextDecoration === 'Fancy border' ? ' decoration-fancy-border': '')"
+        :style="boxStyle">
       <SponsoredLink v-for="amount in store.sponsoredLinks" :key="amount" :alternatingCounter="amount">
         Sponsored link
       </SponsoredLink>
@@ -35,7 +37,8 @@ export default {
         '--box-border-weight': store.boxWrapperBorderWeight + 'px',
         '--box-border-color': store.boxWrapperBorderColor,
         '--box-border-style': store.boxWrapperBorderStyle,
-       /*Too complicated to implement vanilla: '--box-border-gap': store.boxWrapperDashedGap + 'px',*/
+        '--sponsored-link-color': store.sponsoredLinkFill,
+        /*Too complicated to implement vanilla: '--box-border-gap': store.boxWrapperDashedGap + 'px',*/
       }
     }
   }
@@ -66,22 +69,35 @@ export default {
   border: var(--box-border-weight) var(--box-border-style) var(--box-border-color);
 }
 
-.columns-is-1{
+.columns-is-1 {
 }
 
-.columns-is-2{
+.columns-is-2 {
   flex-direction: row;
   flex-wrap: wrap;
-  .sponsored-link{
+
+  .sponsored-link {
     width: 49%;
   }
 }
 
-.columns-is-3{
+.columns-is-3 {
   flex-direction: row;
   flex-wrap: wrap;
-  .sponsored-link{
+
+  .sponsored-link {
     width: 32%;
   }
+}
+
+.decoration-fancy-border {
+  border-width: 20px;
+  border-image: repeating-radial-gradient(
+          circle at 10px,
+          var(--box-bg-color),
+          var(--sponsored-link-color) 2px,
+          var(--box-border-color) 4px,
+          var(--sponsored-link-color) 2px
+  ) 1;
 }
 </style>
