@@ -52,10 +52,23 @@ export const store = reactive({
         textListDecorationGap: '8',
         fontColor: '#000000'
     },
-    setTemplate(template) {
-        switch (template) {
+    template: 'Soda',
+    setTemplate() {
+        console.log('I have this template: ' + this.template);
+        switch (this.template) {
             case 'Searchie':
-                //todo
+                this.boxWrapper.roundness = 0;
+                this.boxWrapper.borderWeight = 0;
+                this.boxWrapper.padding = 0;
+                this.boxWrapper.fill = '#444';
+                this.sponsoredLink.fill = '#555';
+                this.sponsoredLink.roundness = 0;
+                this.sponsoredLink.borderWeight = 0;
+                this.sponsoredLink.padding = 24;
+                this.sponsoredLink.fontColor = '#fff';
+                this.sponsoredLink.gapBetween = 'Manual';
+                this.sponsoredLink.gapBetweenValue = 1;
+                this.sponsoredLink.textDecoration = 'Searchie';
                 break;
             default:
                 this.boxWrapper.roundness = 16;
@@ -70,6 +83,7 @@ export const store = reactive({
                 this.sponsoredLink.borderWeight = 2;
                 this.sponsoredLink.borderColor = '#381EFF';
                 this.sponsoredLink.fontColor = '#381EFF';
+                this.sponsoredLink.textDecoration= 'None';
         }
     },
 })

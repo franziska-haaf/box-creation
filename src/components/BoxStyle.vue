@@ -11,7 +11,7 @@
     <div class="flex-column__4">
       <label for="boxTemplate">Template</label>
       <div class="flex-row__8">
-        <select id="boxTemplate" v-model="template" class="flex-grow-1">
+        <select id="boxTemplate" v-model="selectedTemplate" class="flex-grow-1">
           <option disabled value="">Choose a template</option>
           <option>Soda</option>
           <option>Searchie</option>
@@ -110,13 +110,13 @@
           <div>
             Between links
             <button :class="store.sponsoredLink.gapBetween === 'Auto'? ' filled' : ''"
-                    @click="store.sponsoredLink.gapBetween = 'Auto'; manualGapBetweenLinks = false">Auto
+                    @click="store.sponsoredLink.gapBetween = 'Auto'">Auto
             </button>
             <button :class="store.sponsoredLink.gapBetween === 'Manual'? ' filled' : ''"
-                    @click="store.sponsoredLink.gapBetween = 'Manual'; manualGapBetweenLinks = true">Manual
+                    @click="store.sponsoredLink.gapBetween = 'Manual'">Manual
             </button>
           </div>
-          <div v-if="manualGapBetweenLinks" class="hidden-input">
+          <div v-if="store.sponsoredLink.gapBetween === 'Manual'" class="hidden-input">
             <img src="../assets/icon/margin_between_links.svg" alt="blah" height="24" width="24">
             <input v-model="store.sponsoredLink.gapBetweenValue" class="dense">
           </div>
@@ -276,6 +276,7 @@
               <option>None</option>
               <option>List</option>
               <option>Fancy border</option>
+              <option>Searchie</option>
             </select>
           </div>
           <div v-if="store.sponsoredLink.textDecoration === 'List'" class="flex-row__48">
@@ -317,13 +318,15 @@ export default {
   data() {
     return {
       showAdvanced: true,
-      manualGapBetweenLinks: false,
-      template: 'Soda',
+      selectedTemplate: 'Soda',
       store
     }
   },
-  watch(){
-    store.setTemplate(this.template)
+  watch:{
+    selectedTemplate(){
+      store.template = this.selectedTemplate
+      store.setTemplate()
+    }
   }
 }
 </script>

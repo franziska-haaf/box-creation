@@ -1,5 +1,5 @@
 <template>
-  <div class="sponsored-link flex-row__8" :style="linkStyle">
+  <div :class="'sponsored-link flex-row__8 ' + store.sponsoredLink.textDecoration" :style="linkStyle">
     <span v-if="store.sponsoredLink.textDecoration === 'List' && store.sponsoredLink.textDecorationPosition === 'Left'">
       <span v-if="store.sponsoredLink.textListDecoration === 'Heart'">&#128151;</span>
       <span v-if="store.sponsoredLink.textListDecoration === 'Lightning'">&#9889;</span>
@@ -29,6 +29,7 @@ export default {
   data() {
     return {
       isAlternativeFill: (this.alternatingCounter % 2) !== 1,
+      randomColor : "#"+((1<<24)*Math.random()|0).toString(16),
       store
     }
   },
@@ -50,6 +51,7 @@ export default {
         '--font-underlined': store.sponsoredLink.isUnderlined ? 'underline' : 'none',
         '--font-align': store.sponsoredLink.textAlignment,
         '--gap': store.sponsoredLink.textListDecorationGap + 'px',
+        '--random-color': this.randomColor
       }
     }
   }
@@ -58,6 +60,7 @@ export default {
 
 <style scoped lang="scss">
 .sponsored-link {
+  position: relative;
   box-sizing: border-box;
   color: var(--font-color);
   padding: var(--padding);
@@ -73,8 +76,20 @@ export default {
   justify-content: var(--font-align);
 
   gap: var(--gap);
+
+  img{
+    font-size: var(--font-size);
+  }
 }
-.sponsored-link img{
-  font-size: var(--font-size);
+
+.Searchie:before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: ' ';
+  background-color: var(--random-color);
+  height: 100%;
+  width: 8px;
 }
+
 </style>

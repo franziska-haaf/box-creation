@@ -47,7 +47,7 @@ export default {
     }
   },
   mounted() {
-    store.setTemplate(this.template)
+   store.setTemplate()
   },
 }
 </script>
