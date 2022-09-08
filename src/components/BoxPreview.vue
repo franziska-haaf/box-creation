@@ -1,6 +1,6 @@
 <template>
   <div class="box-preview-wrapper">
-    <div class="box-preview" :style="boxStyle">
+    <div :class="'box-preview ' + 'columns-is-'+ store.boxColumns" :style="boxStyle">
       <SponsoredLink v-for="amount in store.sponsoredLinks" :key="amount" :alternatingCounter="amount">
         Sponsored link
       </SponsoredLink>
@@ -64,5 +64,24 @@ export default {
   justify-content: var(--box-margin-between-links-mode);
 
   border: var(--box-border-weight) var(--box-border-style) var(--box-border-color);
+}
+
+.columns-is-1{
+}
+
+.columns-is-2{
+  flex-direction: row;
+  flex-wrap: wrap;
+  .sponsored-link{
+    width: 49%;
+  }
+}
+
+.columns-is-3{
+  flex-direction: row;
+  flex-wrap: wrap;
+  .sponsored-link{
+    width: 32%;
+  }
 }
 </style>
