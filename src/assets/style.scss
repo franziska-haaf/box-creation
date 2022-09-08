@@ -161,7 +161,6 @@ button {
   background: transparent;
   border: 1px solid $color-grey;
   padding: 10px 24px;
-  box-sizing: border-box;
 
   &.filled {
     background: $color-light-grey;
@@ -194,10 +193,10 @@ button {
       background: $color-primary;
       color: $color-white;
 
-      &:hover {
+      &:not(disabled):hover {
         background: $color-primary_hover;
-        cursor: pointer;
       }
+
     }
 
     &:disabled:hover {

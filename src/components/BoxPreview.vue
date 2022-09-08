@@ -77,7 +77,7 @@ export default {
   flex-wrap: wrap;
 
   .sponsored-link {
-    width: 49%;
+    width: 48%;
   }
 }
 

@@ -75,6 +75,7 @@ export const store = reactive({
                 this.boxWrapper.borderStyle = 'solid';
                 break;
             case 'Dentist':
+                this.sponsoredLink.gapBetween = 'Auto';
                 this.boxWrapper.roundness = 0;
                 this.boxWrapper.borderWeight = 8;
                 this.boxWrapper.borderColor = '#c8e9f6';
@@ -97,6 +98,7 @@ export const store = reactive({
                 this.boxWrapper.borderStyle = 'dotted';
                 break;
             default:
+                this.sponsoredLink.gapBetween = 'Auto';
                 this.boxWrapper.roundness = 16;
                 this.boxWrapper.padding = 16;
                 this.boxWrapper.fill = '#F8FFA8';
