@@ -41,6 +41,7 @@ export default {
         '--border-weight': store.sponsoredLinkBorderWeight + 'px',
         '--border-color': store.sponsoredLinkBorderColor,
         '--border-style': store.sponsoredLinkBorderStyle,
+        '--font-color': store.sponsoredLinkFontColor,
         '--font-family': store.sponsoredLinkFontFamily,
         '--font-size': store.sponsoredLinkFontSize + 'px',
         '--font-caps': store.sponsoredLinkFontIsCaps ? 'uppercase' : 'none',
@@ -58,6 +59,7 @@ export default {
 <style scoped lang="scss">
 .sponsored-link {
   box-sizing: border-box;
+  color: var(--font-color);
   padding: var(--padding);
   border-radius: var(--border-radius);
   background-color: var(--fill-color);

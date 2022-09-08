@@ -226,6 +226,10 @@
             <img src="../assets/icon/font-size.svg" alt="blah" height="24" width="24">
             <input v-model="store.sponsoredLinkFontSize" class="dense">
           </div>
+          <div class="flex-row__8">
+            <div class="color-picker"><input type="color" v-model="store.sponsoredLinkFontColor"></div>
+            {{ store.sponsoredLinkFontColor }}
+          </div>
         </div>
         <div class="flex-row__48">
           <div>

@@ -50,6 +50,7 @@ export const store = reactive({
     sponsoredTextDecoration: 'None',
     sponsoredTextDecorationPosition: 'Left',
     sponsoredTextListDecoration: 'Heart',
-    sponsoredTextListDecorationGap: '8'
+    sponsoredTextListDecorationGap: '8',
+    sponsoredLinkFontColor: '#381EFF'
 
 })
