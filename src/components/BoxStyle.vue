@@ -2,7 +2,7 @@
   <div class="flex-column__24 style-tab">
     <div class="flex-row__auto">
       <div class="flex-row__8">
-        <span>Show advanced</span>
+        <span>Show advanced settings</span>
         <input type="checkbox" v-model="showAdvanced">
       </div>
       <button class="primary" disabled>Save design as template</button>
@@ -44,7 +44,7 @@
       <div class="flex-column__4">
         Fill
         <div class="flex-row__48">
-          <div>
+          <div v-if="showAdvanced">
             <button :class="store.boxWrapper.fillStyle === 'Color'? ' filled img' : 'img'"
                     @click="store.boxWrapper.fillStyle = 'Color'">
               <img src="../assets/icon/solid_color_fill.svg" alt="Blah">
@@ -77,7 +77,7 @@
             <div class="color-picker"><input type="color" v-model="store.boxWrapper.borderColor"></div>
             {{ store.boxWrapper.borderColor }}
           </div>
-          <div>
+          <div v-if="showAdvanced">
             <button :class="store.boxWrapper.borderStyle === 'solid'? ' filled img' : 'img'"
                     @click="store.boxWrapper.borderStyle = 'solid'">
               <img src="../assets/icon/border-solid.svg" alt="lorem" height="24" width="24">
@@ -100,7 +100,7 @@
       </div>
 
       <!--Spacing options-->
-      <div class="flex-column__4">
+      <div v-if="showAdvanced" class="flex-column__4">
         Spacing
         <div class="flex-row__48">
           <div class="hidden-input">
@@ -147,7 +147,7 @@
       <div class="flex-column__4">
         Fill
         <div class="flex-row__48">
-          <div>
+          <div v-if="showAdvanced">
             <button :class="store.sponsoredLink.fillStyle === 'Color'? ' filled img' : 'img'"
                     @click="store.sponsoredLink.fillStyle = 'Color'">
               <img src="../assets/icon/solid_color_fill.svg" alt="Blah">
@@ -157,7 +157,7 @@
               <img src="../assets/icon/gradient_fill.svg" alt="Blah">
             </button>
           </div>
-          <div class="hidden-input">
+          <div v-if="showAdvanced" class="hidden-input">
             <select id="boxSite" v-model="store.sponsoredLink.fillFancyness">
               <option disabled value="">Choose a style</option>
               <option>Single color</option>
@@ -188,7 +188,7 @@
             <div class="color-picker"><input type="color" v-model="store.sponsoredLink.borderColor"></div>
             {{ store.sponsoredLink.borderColor }}
           </div>
-          <div>
+          <div v-if="showAdvanced">
             <button :class="store.sponsoredLink.borderStyle === 'solid'? ' filled img' : 'img'"
                     @click="store.sponsoredLink.borderStyle = 'solid'">
               <img src="../assets/icon/border-solid.svg" alt="lorem" height="24" width="24">
@@ -268,7 +268,7 @@
       </div>
 
       <!--Decoration options-->
-      <div class="flex-column__4">
+      <div v-if="showAdvanced" class="flex-column__4">
         Decoration
         <div class="flex-row__48">
           <div class=" hidden-input">
@@ -317,7 +317,7 @@ export default {
   name: 'BoxStyle',
   data() {
     return {
-      showAdvanced: true,
+      showAdvanced: false,
       selectedTemplate: 'Soda',
       store
     }

@@ -54,7 +54,6 @@ export const store = reactive({
     },
     template: 'Soda',
     setTemplate() {
-        console.log('I have this template: ' + this.template);
         switch (this.template) {
             case 'Searchie':
                 this.boxWrapper.roundness = 0;
@@ -70,7 +69,7 @@ export const store = reactive({
                 this.sponsoredLink.gapBetweenValue = 1;
                 this.sponsoredLink.textDecoration = 'Searchie';
                 this.sponsoredLink.fontSize = '16';
-                this.sponsoredLink.fontFamily = '1"Roboto", sans-serif';
+                this.sponsoredLink.fontFamily = '"Roboto", sans-serif';
                 this.sponsoredLink.fontIsBold = true;
                 this.boxWrapper.borderStyle = 'solid';
                 break;
@@ -114,7 +113,7 @@ export const store = reactive({
                 this.sponsoredLink.fontColor = '#381EFF';
                 this.sponsoredLink.textDecoration= 'None';
                 this.sponsoredLink.fontSize = '16';
-                this.sponsoredLink.fontFamily = '1"Roboto", sans-serif';
+                this.sponsoredLink.fontFamily = '"Roboto", sans-serif';
                 this.sponsoredLink.fontIsBold = false;
                 this.boxWrapper.borderStyle = 'solid';
         }
