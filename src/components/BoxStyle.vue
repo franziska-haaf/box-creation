@@ -15,7 +15,7 @@
           <option disabled value="">Choose a template</option>
           <option>Soda</option>
           <option>Searchie</option>
-          <option>Gothic</option>
+          <option>Dentist</option>
         </select>
         <span class="text-primary">Reset changes</span>
       </div>

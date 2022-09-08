@@ -6,6 +6,7 @@
       <span v-if="store.sponsoredLink.textListDecoration === 'Sparkle'">&#10024;</span>
       <span v-if="store.sponsoredLink.textListDecoration === 'Moon'">&#127770;</span>
       <span v-if="store.sponsoredLink.textListDecoration === 'Flower'">&#127800;</span>
+      <span v-if="store.sponsoredLink.textListDecoration === 'Tooth'">&#129463;</span>
     </span>
     Sponsored link
     <span v-if="store.sponsoredLink.textDecoration === 'List' && store.sponsoredLink.textDecorationPosition === 'Right'">
@@ -14,6 +15,7 @@
       <span v-if="store.sponsoredLink.textListDecoration === 'Sparkle'">&#10024;</span>
       <span v-if="store.sponsoredLink.textListDecoration === 'Moon'">&#127770;</span>
       <span v-if="store.sponsoredLink.textListDecoration === 'Flower'">&#127800;</span>
+      <span v-if="store.sponsoredLink.textListDecoration === 'Tooth'">&#129463;</span>
     </span>
   </div>
 </template>
