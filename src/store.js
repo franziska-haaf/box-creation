@@ -16,41 +16,60 @@ export const store = reactive({
     setBoxWidth(boxWidth) {
         this.boxWidth = boxWidth
     },
-    /*Box wrapper*/
-    boxWrapperRoundness: 16,
-    boxWrapperPadding: 16,
-    boxColumns: 1,
-    boxWrapperFillStyle: 'Color',
-    boxWrapperFill: '#F8FFA8',
-    boxWrapperBorderWeight: 2,
-    boxWrapperBorderColor: '#BECE09',
-    boxWrapperBorderStyle: 'solid',
-    /*Too complicated to implement vanilla: boxWrapperDashedGap: 4,*/
+    boxWrapper: {
+        roundness: 0,
+        padding: 0,
+        columns: 1,
+        fillStyle: 'Color',
+        fill: '#ffffff',
+        borderWeight: 0,
+        borderColor: '#000000',
+        borderStyle: 'solid',
+    },
+    sponsoredLink: {
+        roundness: 0,
+        padding: 0,
+        gapBetween: 'Auto',
+        gapBetweenValue: '8',
+        fillStyle: 'Color',
+        fill: '#000000',
+        alternativeFill: '#999999',
+        fillFancyness: 'Single color',
 
-    /*Sponsored links*/
-    sponsoredLinkRoundness: 400,
-    sponsoredLinkPadding: 16,
-    sponsoredLinkGapBetween: 'Auto',
-    sponsoredLinkGapBetweenValue: '8',
-    sponsoredLinkFillStyle: 'Color',
-    sponsoredLinkFillFancyness: 'Single color',
-    sponsoredLinkFill: '#C0BCF3',
-    sponsoredLinkAlternativeFill: '#F3C9BC',
-    sponsoredLinkBorderWeight: 2,
-    sponsoredLinkBorderColor: '#381EFF',
-    sponsoredLinkBorderStyle: 'solid',
+        borderWeight: 0,
+        borderColor: '#381EFF',
+        borderStyle: 'solid',
 
-    sponsoredLinkFontFamily: '"Roboto", sans-serif',
-    sponsoredLinkFontSize: 16,
-    sponsoredLinkFontIsBold: false,
-    sponsoredLinkFontIsItalic: false,
-    sponsoredLinkFontIsUnderlined: false,
-    sponsoredLinkFontIsCaps: false,
-    sponsoredLinkTextAlignment: 'left',
-    sponsoredTextDecoration: 'None',
-    sponsoredTextDecorationPosition: 'Left',
-    sponsoredTextListDecoration: 'Heart',
-    sponsoredTextListDecorationGap: '8',
-    sponsoredLinkFontColor: '#381EFF'
-
+        fontFamily: '"Roboto", sans-serif',
+        fontSize: '16',
+        fontIsBold: false,
+        fontIsItalic: false,
+        fontIsUnderlined: false,
+        textAlignment: 'left',
+        textDecoration: 'None',
+        textDecorationPosition: 'Left',
+        textListDecoration: 'Heart',
+        textListDecorationGap: '8',
+        fontColor: '#000000'
+    },
+    setTemplate(template) {
+        switch (template) {
+            case 'Searchie':
+                //todo
+                break;
+            default:
+                this.boxWrapper.roundness = 16;
+                this.boxWrapper.padding = 16;
+                this.boxWrapper.fill = '#F8FFA8';
+                this.boxWrapper.borderWeight = 2;
+                this.boxWrapper.borderColor = '#BECE09';
+                this.sponsoredLink.roundness = 400;
+                this.sponsoredLink.padding = 16;
+                this.sponsoredLink.fill = '#C0BCF3';
+                this.sponsoredLink.alternativeFill = '#F3C9BC';
+                this.sponsoredLink.borderWeight = 2;
+                this.sponsoredLink.borderColor = '#381EFF';
+                this.sponsoredLink.fontColor = '#381EFF';
+        }
+    },
 })

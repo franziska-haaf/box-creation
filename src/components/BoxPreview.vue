@@ -1,7 +1,7 @@
 <template>
   <div class="box-preview-wrapper">
     <div
-        :class="'box-preview ' + 'columns-is-'+ store.boxColumns + (store.sponsoredTextDecoration === 'Fancy border' ? ' decoration-fancy-border': '')"
+        :class="'box-preview ' + 'columns-is-'+ store.boxWrapper.columns + (store.sponsoredLink.textDecoration === 'Fancy border' ? ' decoration-fancy-border': '')"
         :style="boxStyle">
       <SponsoredLink v-for="amount in store.sponsoredLinks" :key="amount" :alternatingCounter="amount">
         Sponsored link
@@ -29,15 +29,15 @@ export default {
       return {
         '--box-height': store.boxHeight > 0 ? store.boxHeight + 'px' : 'auto',
         '--box-width': store.boxWidth > 0 ? store.boxWidth + 'px' : '100%',
-        '--box-border-radius': store.boxWrapperRoundness + 'px',
-        '--box-bg-color': store.boxWrapperFill,
-        '--box-padding': store.boxWrapperPadding + 'px',
-        '--box-margin-between-links': store.sponsoredLinkGapBetweenValue + 'px',
-        '--box-margin-between-links-mode': store.sponsoredLinkGapBetween === 'Auto' ? 'space-between' : 'flex-start',
-        '--box-border-weight': store.boxWrapperBorderWeight + 'px',
-        '--box-border-color': store.boxWrapperBorderColor,
-        '--box-border-style': store.boxWrapperBorderStyle,
-        '--sponsored-link-color': store.sponsoredLinkFill,
+        '--box-border-radius': store.boxWrapper.roundness + 'px',
+        '--box-bg-color': store.boxWrapper.fill,
+        '--box-padding': store.boxWrapper.padding + 'px',
+        '--box-margin-between-links': store.sponsoredLink.gapBetweenValue + 'px',
+        '--box-margin-between-links-mode': store.sponsoredLink.gapBetween === 'Auto' ? 'space-between' : 'flex-start',
+        '--box-border-weight': store.boxWrapper.borderWeight + 'px',
+        '--box-border-color': store.boxWrapper.borderColor,
+        '--box-border-style': store.boxWrapper.borderStyle,
+        '--sponsored-link-color': store.sponsoredLink.fill,
         /*Too complicated to implement vanilla: '--box-border-gap': store.boxWrapperDashedGap + 'px',*/
       }
     }

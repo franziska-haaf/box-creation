@@ -45,7 +45,10 @@ export default {
       sponsoredLinksOutput: store.sponsoredLinks,
       store
     }
-  }
+  },
+  mounted() {
+    store.setTemplate(this.template)
+  },
 }
 </script>
 

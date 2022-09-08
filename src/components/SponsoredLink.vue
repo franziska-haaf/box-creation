@@ -1,19 +1,19 @@
 <template>
   <div class="sponsored-link flex-row__8" :style="linkStyle">
-    <span v-if="store.sponsoredTextDecoration === 'List' && store.sponsoredTextDecorationPosition === 'Left'">
-      <span v-if="store.sponsoredTextListDecoration === 'Heart'">&#128151;</span>
-      <span v-if="store.sponsoredTextListDecoration === 'Lightning'">&#9889;</span>
-      <span v-if="store.sponsoredTextListDecoration === 'Sparkle'">&#10024;</span>
-      <span v-if="store.sponsoredTextListDecoration === 'Moon'">&#127770;</span>
-      <span v-if="store.sponsoredTextListDecoration === 'Flower'">&#127800;</span>
+    <span v-if="store.sponsoredLink.textDecoration === 'List' && store.sponsoredLink.textDecorationPosition === 'Left'">
+      <span v-if="store.sponsoredLink.textListDecoration === 'Heart'">&#128151;</span>
+      <span v-if="store.sponsoredLink.textListDecoration === 'Lightning'">&#9889;</span>
+      <span v-if="store.sponsoredLink.textListDecoration === 'Sparkle'">&#10024;</span>
+      <span v-if="store.sponsoredLink.textListDecoration === 'Moon'">&#127770;</span>
+      <span v-if="store.sponsoredLink.textListDecoration === 'Flower'">&#127800;</span>
     </span>
     Sponsored link
-    <span v-if="store.sponsoredTextDecoration === 'List' && store.sponsoredTextDecorationPosition === 'Right'">
-      <span v-if="store.sponsoredTextListDecoration === 'Heart'">&#128151;</span>
-      <span v-if="store.sponsoredTextListDecoration === 'Lightning'">&#9889;</span>
-      <span v-if="store.sponsoredTextListDecoration === 'Sparkle'">&#10024;</span>
-      <span v-if="store.sponsoredTextListDecoration === 'Moon'">&#127770;</span>
-      <span v-if="store.sponsoredTextListDecoration === 'Flower'">&#127800;</span>
+    <span v-if="store.sponsoredLink.textDecoration === 'List' && store.sponsoredLink.textDecorationPosition === 'Right'">
+      <span v-if="store.sponsoredLink.textListDecoration === 'Heart'">&#128151;</span>
+      <span v-if="store.sponsoredLink.textListDecoration === 'Lightning'">&#9889;</span>
+      <span v-if="store.sponsoredLink.textListDecoration === 'Sparkle'">&#10024;</span>
+      <span v-if="store.sponsoredLink.textListDecoration === 'Moon'">&#127770;</span>
+      <span v-if="store.sponsoredLink.textListDecoration === 'Flower'">&#127800;</span>
     </span>
   </div>
 </template>
@@ -35,21 +35,21 @@ export default {
   computed: {
     linkStyle() {
       return {
-        '--padding': store.sponsoredLinkPadding + 'px',
-        '--border-radius': store.sponsoredLinkRoundness + 'px',
-        '--fill-color': store.sponsoredLinkFillFancyness === 'Alternating' && this.isAlternativeFill ? store.sponsoredLinkAlternativeFill : store.sponsoredLinkFill,
-        '--border-weight': store.sponsoredLinkBorderWeight + 'px',
-        '--border-color': store.sponsoredLinkBorderColor,
-        '--border-style': store.sponsoredLinkBorderStyle,
-        '--font-color': store.sponsoredLinkFontColor,
-        '--font-family': store.sponsoredLinkFontFamily,
-        '--font-size': store.sponsoredLinkFontSize + 'px',
-        '--font-caps': store.sponsoredLinkFontIsCaps ? 'uppercase' : 'none',
-        '--font-is-bold': store.sponsoredLinkFontIsBold ? '700' : '400',
-        '--font-italic': store.sponsoredLinkFontIsItalic ? 'italic' : 'normal',
-        '--font-underlined': store.sponsoredLinkFontIsUnderlined ? 'underline' : 'none',
-        '--font-align': store.sponsoredLinkTextAlignment,
-        '--gap': store.sponsoredTextListDecorationGap + 'px',
+        '--padding': store.sponsoredLink.padding + 'px',
+        '--border-radius': store.sponsoredLink.roundness + 'px',
+        '--fill-color': store.sponsoredLink.fillFancyness === 'Alternating' && this.isAlternativeFill ? store.sponsoredLink.alternativeFill : store.sponsoredLink.fill,
+        '--border-weight': store.sponsoredLink.borderWeight + 'px',
+        '--border-color': store.sponsoredLink.borderColor,
+        '--border-style': store.sponsoredLink.borderStyle,
+        '--font-color': store.sponsoredLink.fontColor,
+        '--font-family': store.sponsoredLink.fontFamily,
+        '--font-size': store.sponsoredLink.fontSize + 'px',
+        '--font-caps': store.sponsoredLink.isCaps ? 'uppercase' : 'none',
+        '--font-is-bold': store.sponsoredLink.isBold ? '700' : '400',
+        '--font-italic': store.sponsoredLink.isItalic ? 'italic' : 'normal',
+        '--font-underlined': store.sponsoredLink.isUnderlined ? 'underline' : 'none',
+        '--font-align': store.sponsoredLink.textAlignment,
+        '--gap': store.sponsoredLink.textListDecorationGap + 'px',
       }
     }
   }

@@ -27,16 +27,16 @@
         <div class="flex-column__4">
           Columns
           <div>
-            <button :class="store.boxColumns === 1? ' filled img' : 'img'" @click="store.boxColumns = 1">1</button>
-            <button :class="store.boxColumns === 2? ' filled img' : 'img'" @click="store.boxColumns = 2">2</button>
-            <button :class="store.boxColumns === 3? ' filled img' : 'img'" @click="store.boxColumns = 3">3</button>
+            <button :class="store.boxWrapper.columns === 1? ' filled img' : 'img'" @click="store.boxWrapper.columns = 1">1</button>
+            <button :class="store.boxWrapper.columns === 2? ' filled img' : 'img'" @click="store.boxWrapper.columns = 2">2</button>
+            <button :class="store.boxWrapper.columns === 3? ' filled img' : 'img'" @click="store.boxWrapper.columns = 3">3</button>
           </div>
         </div>
         <div class="flex-column__4">
           Corner roundness
           <div class="hidden-input">
             <img src="../assets/icon/rounded_corner.svg" alt="A rectangle with 1 rounded corner" height="24" width="24">
-            <input v-model="store.boxWrapperRoundness" class="dense">
+            <input v-model="store.boxWrapper.roundness" class="dense">
           </div>
         </div>
       </div>
@@ -45,22 +45,22 @@
         Fill
         <div class="flex-row__48">
           <div>
-            <button :class="store.boxWrapperFillStyle === 'Color'? ' filled img' : 'img'"
-                    @click="store.boxWrapperFillStyle = 'Color'">
+            <button :class="store.boxWrapper.fillStyle === 'Color'? ' filled img' : 'img'"
+                    @click="store.boxWrapper.fillStyle = 'Color'">
               <img src="../assets/icon/solid_color_fill.svg" alt="Blah">
             </button>
-            <button disabled :class="store.boxWrapperFillStyle === 'Gradient'? ' filled img' : 'img'"
-                    @click="store.boxWrapperFillStyle = 'Gradient'">
+            <button disabled :class="store.boxWrapper.fillStyle === 'Gradient'? ' filled img' : 'img'"
+                    @click="store.boxWrapper.fillStyle = 'Gradient'">
               <img src="../assets/icon/gradient_fill.svg" alt="Blah">
             </button>
-            <button disabled :class="store.boxWrapperFillStyle === 'Image'? ' filled img' : 'img'"
-                    @click="store.boxWrapperFillStyle = 'Image'">
+            <button disabled :class="store.boxWrapper.fillStyle === 'Image'? ' filled img' : 'img'"
+                    @click="store.boxWrapper.fillStyle = 'Image'">
               <img src="../assets/icon/img_fill.svg" alt="Blah">
             </button>
           </div>
           <div class="flex-row__8">
-            <div class="color-picker"><input type="color" v-model="store.boxWrapperFill"></div>
-            {{ store.boxWrapperFill }}
+            <div class="color-picker"><input type="color" v-model="store.boxWrapper.fill"></div>
+            {{ store.boxWrapper.fill }}
           </div>
         </div>
       </div>
@@ -71,28 +71,28 @@
         <div class="flex-row__48">
           <div class="hidden-input">
             <img src="../assets/icon/border-weight.svg" alt="Lorem" height="24" width="24">
-            <input v-model="store.boxWrapperBorderWeight" class="dense">
+            <input v-model="store.boxWrapper.borderWeight" class="dense">
           </div>
           <div class="flex-row__8">
-            <div class="color-picker"><input type="color" v-model="store.boxWrapperBorderColor"></div>
-            {{ store.boxWrapperBorderColor }}
+            <div class="color-picker"><input type="color" v-model="store.boxWrapper.borderColor"></div>
+            {{ store.boxWrapper.borderColor }}
           </div>
           <div>
-            <button :class="store.boxWrapperBorderStyle === 'solid'? ' filled img' : 'img'"
-                    @click="store.boxWrapperBorderStyle = 'solid'">
+            <button :class="store.boxWrapper.borderStyle === 'solid'? ' filled img' : 'img'"
+                    @click="store.boxWrapper.borderStyle = 'solid'">
               <img src="../assets/icon/border-solid.svg" alt="lorem" height="24" width="24">
             </button>
-            <button :class="store.boxWrapperBorderStyle === 'dashed'? ' filled img' : 'img'"
-                    @click="store.boxWrapperBorderStyle = 'dashed'">
+            <button :class="store.boxWrapper.borderStyle === 'dashed'? ' filled img' : 'img'"
+                    @click="store.boxWrapper.borderStyle = 'dashed'">
               <img src="../assets/icon/border-dashed.svg" alt="lorem" height="24" width="24">
             </button>
-            <button :class="store.boxWrapperBorderStyle === 'dotted'? ' filled img' : 'img'"
-                    @click="store.boxWrapperBorderStyle = 'dotted'">
+            <button :class="store.boxWrapper.borderStyle === 'dotted'? ' filled img' : 'img'"
+                    @click="store.boxWrapper.borderStyle = 'dotted'">
               <img src="../assets/icon/border-dotted.svg" alt="lorem" height="24" width="24">
             </button>
           </div>
           <!-- Too complicated to implement vanilla:
-                   <div v-if="store.boxWrapperBorderStyle === 'dashed' || store.boxWrapperBorderStyle === 'dotted'" class="hidden-input">
+                   <div v-if="store.boxWrapper.borderStyle === 'dashed' || store.boxWrapper.borderStyle === 'dotted'" class="hidden-input">
                       <img src="../assets/icon/border-gap.svg" alt="blah" height="24" width="24">
                       <input v-model="store.boxWrapperDashedGap" class="dense">
                     </div>-->
@@ -105,20 +105,20 @@
         <div class="flex-row__48">
           <div class="hidden-input">
             <img src="../assets/icon/margin.svg" alt="A rectangle with 1 rounded corner" height="24" width="24">
-            <input v-model="store.boxWrapperPadding" class="dense">
+            <input v-model="store.boxWrapper.padding" class="dense">
           </div>
           <div>
             Between links
-            <button :class="store.sponsoredLinkGapBetween === 'Auto'? ' filled' : ''"
-                    @click="store.sponsoredLinkGapBetween = 'Auto'; manualGapBetweenLinks = false">Auto
+            <button :class="store.sponsoredLink.gapBetween === 'Auto'? ' filled' : ''"
+                    @click="store.sponsoredLink.gapBetween = 'Auto'; manualGapBetweenLinks = false">Auto
             </button>
-            <button :class="store.sponsoredLinkGapBetween === 'Manual'? ' filled' : ''"
-                    @click="store.sponsoredLinkGapBetween = 'Manual'; manualGapBetweenLinks = true">Manual
+            <button :class="store.sponsoredLink.gapBetween === 'Manual'? ' filled' : ''"
+                    @click="store.sponsoredLink.gapBetween = 'Manual'; manualGapBetweenLinks = true">Manual
             </button>
           </div>
           <div v-if="manualGapBetweenLinks" class="hidden-input">
             <img src="../assets/icon/margin_between_links.svg" alt="blah" height="24" width="24">
-            <input v-model="store.sponsoredLinkGapBetweenValue" class="dense">
+            <input v-model="store.sponsoredLink.gapBetweenValue" class="dense">
           </div>
         </div>
       </div>
@@ -131,14 +131,14 @@
           Spacing
           <div class="hidden-input">
             <img src="../assets/icon/margin.svg" alt="lorem" height="24" width="24">
-            <input v-model="store.sponsoredLinkPadding" class="dense">
+            <input v-model="store.sponsoredLink.padding" class="dense">
           </div>
         </div>
         <div class="flex-column__4">
           Corner roundness
           <div class="hidden-input">
             <img src="../assets/icon/rounded_corner.svg" alt="blah" height="24" width="24">
-            <input v-model="store.sponsoredLinkRoundness" class="dense">
+            <input v-model="store.sponsoredLink.roundness" class="dense">
           </div>
         </div>
       </div>
@@ -148,17 +148,17 @@
         Fill
         <div class="flex-row__48">
           <div>
-            <button :class="store.sponsoredLinkFillStyle === 'Color'? ' filled img' : 'img'"
-                    @click="store.sponsoredLinkFillStyle = 'Color'">
+            <button :class="store.sponsoredLink.fillStyle === 'Color'? ' filled img' : 'img'"
+                    @click="store.sponsoredLink.fillStyle = 'Color'">
               <img src="../assets/icon/solid_color_fill.svg" alt="Blah">
             </button>
-            <button disabled :class="store.sponsoredLinkFillStyle === 'Gradient'? ' filled img' : 'img'"
-                    @click="store.sponsoredLinkFillStyle = 'Gradient'">
+            <button disabled :class="store.sponsoredLink.fillStyle === 'Gradient'? ' filled img' : 'img'"
+                    @click="store.sponsoredLink.fillStyle = 'Gradient'">
               <img src="../assets/icon/gradient_fill.svg" alt="Blah">
             </button>
           </div>
           <div class="hidden-input">
-            <select id="boxSite" v-model="store.sponsoredLinkFillFancyness">
+            <select id="boxSite" v-model="store.sponsoredLink.fillFancyness">
               <option disabled value="">Choose a style</option>
               <option>Single color</option>
               <option>Alternating</option>
@@ -166,12 +166,12 @@
           </div>
 
           <div class="flex-row__8">
-            <div class="color-picker"><input type="color" v-model="store.sponsoredLinkFill"></div>
-            {{ store.sponsoredLinkFill }}
+            <div class="color-picker"><input type="color" v-model="store.sponsoredLink.fill"></div>
+            {{ store.sponsoredLink.fill }}
           </div>
-          <div v-if="store.sponsoredLinkFillFancyness === 'Alternating'" class="flex-row__8">
-            <div class="color-picker"><input type="color" v-model="store.sponsoredLinkAlternativeFill"></div>
-            {{ store.sponsoredLinkAlternativeFill }}
+          <div v-if="store.sponsoredLink.fillFancyness === 'Alternating'" class="flex-row__8">
+            <div class="color-picker"><input type="color" v-model="store.sponsoredLink.alternativeFill"></div>
+            {{ store.sponsoredLink.alternativeFill }}
           </div>
         </div>
       </div>
@@ -182,28 +182,28 @@
         <div class="flex-row__48">
           <div class="hidden-input">
             <img src="../assets/icon/border-weight.svg" alt="Lorem" height="24" width="24">
-            <input v-model="store.sponsoredLinkBorderWeight" class="dense">
+            <input v-model="store.sponsoredLink.borderWeight" class="dense">
           </div>
           <div class="flex-row__8">
-            <div class="color-picker"><input type="color" v-model="store.sponsoredLinkBorderColor"></div>
-            {{ store.sponsoredLinkBorderColor }}
+            <div class="color-picker"><input type="color" v-model="store.sponsoredLink.borderColor"></div>
+            {{ store.sponsoredLink.borderColor }}
           </div>
           <div>
-            <button :class="store.sponsoredLinkBorderStyle === 'solid'? ' filled img' : 'img'"
-                    @click="store.sponsoredLinkBorderStyle = 'solid'">
+            <button :class="store.sponsoredLink.borderStyle === 'solid'? ' filled img' : 'img'"
+                    @click="store.sponsoredLink.borderStyle = 'solid'">
               <img src="../assets/icon/border-solid.svg" alt="lorem" height="24" width="24">
             </button>
-            <button :class="store.sponsoredLinkBorderStyle === 'dashed'? ' filled img' : 'img'"
-                    @click="store.sponsoredLinkBorderStyle = 'dashed'">
+            <button :class="store.sponsoredLink.borderStyle === 'dashed'? ' filled img' : 'img'"
+                    @click="store.sponsoredLink.borderStyle = 'dashed'">
               <img src="../assets/icon/border-dashed.svg" alt="lorem" height="24" width="24">
             </button>
-            <button :class="store.sponsoredLinkBorderStyle === 'dotted'? ' filled img' : 'img'"
-                    @click="store.sponsoredLinkBorderStyle = 'dotted'">
+            <button :class="store.sponsoredLink.borderStyle === 'dotted'? ' filled img' : 'img'"
+                    @click="store.sponsoredLink.borderStyle = 'dotted'">
               <img src="../assets/icon/border-dotted.svg" alt="lorem" height="24" width="24">
             </button>
           </div>
           <!-- Too complicated to implement vanilla:
-                   <div v-if="store.boxWrapperBorderStyle === 'dashed' || store.boxWrapperBorderStyle === 'dotted'" class="hidden-input">
+                   <div v-if="store.boxWrapper.borderStyle === 'dashed' || store.boxWrapper.borderStyle === 'dotted'" class="hidden-input">
                       <img src="../assets/icon/border-gap.svg" alt="blah" height="24" width="24">
                       <input v-model="store.boxWrapperDashedGap" class="dense">
                     </div>-->
@@ -215,7 +215,7 @@
         Text
         <div class="flex-row__48">
           <div class=" hidden-input">
-            <select id="fontFamily" v-model="store.sponsoredLinkFontFamily">
+            <select id="fontFamily" v-model="store.sponsoredLink.fontFamily">
               <option disabled value="">Choose a verified site</option>
               <option>"Roboto", sans-serif</option>
               <option>"Qwitcher Grypen", cursive</option>
@@ -224,43 +224,43 @@
           </div>
           <div class="hidden-input">
             <img src="../assets/icon/font-size.svg" alt="blah" height="24" width="24">
-            <input v-model="store.sponsoredLinkFontSize" class="dense">
+            <input v-model="store.sponsoredLink.fontSize" class="dense">
           </div>
           <div class="flex-row__8">
-            <div class="color-picker"><input type="color" v-model="store.sponsoredLinkFontColor"></div>
-            {{ store.sponsoredLinkFontColor }}
+            <div class="color-picker"><input type="color" v-model="store.sponsoredLink.fontColor"></div>
+            {{ store.sponsoredLink.fontColor }}
           </div>
         </div>
         <div class="flex-row__48">
           <div>
-            <button :class="store.sponsoredLinkTextAlignment === 'left'? ' filled img' : 'img'"
-                    @click="store.sponsoredLinkTextAlignment = 'left'">
+            <button :class="store.sponsoredLink.textAlignment === 'left'? ' filled img' : 'img'"
+                    @click="store.sponsoredLink.textAlignment = 'left'">
               <img src="../assets/icon/format_align_left.svg" alt="lorem" height="24" width="24">
             </button>
-            <button :class="store.sponsoredLinkTextAlignment === 'center'? ' filled img' : 'img'"
-                    @click="store.sponsoredLinkTextAlignment = 'center'">
+            <button :class="store.sponsoredLink.textAlignment === 'center'? ' filled img' : 'img'"
+                    @click="store.sponsoredLink.textAlignment = 'center'">
               <img src="../assets/icon/format_align_center.svg" alt="lorem" height="24" width="24">
             </button>
-            <button :class="store.sponsoredLinkTextAlignment === 'right'? ' filled img' : 'img'"
-                    @click="store.sponsoredLinkTextAlignment = 'right'">
+            <button :class="store.sponsoredLink.textAlignment === 'right'? ' filled img' : 'img'"
+                    @click="store.sponsoredLink.textAlignment = 'right'">
               <img src="../assets/icon/format_align_right.svg" alt="lorem" height="24" width="24">
             </button>
           </div>
           <div>
-            <button :class="store.sponsoredLinkFontIsBold ? ' filled img' : 'img'"
-                    @click="store.sponsoredLinkFontIsBold = !store.sponsoredLinkFontIsBold">
+            <button :class="store.sponsoredLink.isBold ? ' filled img' : 'img'"
+                    @click="store.sponsoredLink.isBold = !store.sponsoredLink.isBold">
               <img src="../assets/icon/font-bold.svg" alt="Blah">
             </button>
-            <button :class="store.sponsoredLinkFontIsItalic ? ' filled img' : 'img'"
-                    @click="store.sponsoredLinkFontIsItalic = !store.sponsoredLinkFontIsItalic">
+            <button :class="store.sponsoredLink.isItalic ? ' filled img' : 'img'"
+                    @click="store.sponsoredLink.isItalic = !store.sponsoredLink.isItalic">
               <img src="../assets/icon/font-italic.svg" alt="Blah">
             </button>
-            <button :class="store.sponsoredLinkFontIsUnderlined ? ' filled img' : 'img'"
-                    @click="store.sponsoredLinkFontIsUnderlined = !store.sponsoredLinkFontIsUnderlined">
+            <button :class="store.sponsoredLink.isUnderlined ? ' filled img' : 'img'"
+                    @click="store.sponsoredLink.isUnderlined = !store.sponsoredLink.isUnderlined">
               <img src="../assets/icon/font-underlined.svg" alt="Blah">
             </button>
-            <button :class="store.sponsoredLinkFontIsCaps ? ' filled img' : 'img'"
-                    @click="store.sponsoredLinkFontIsCaps = !store.sponsoredLinkFontIsCaps">
+            <button :class="store.sponsoredLink.isCaps ? ' filled img' : 'img'"
+                    @click="store.sponsoredLink.isCaps = !store.sponsoredLink.isCaps">
               <img src="../assets/icon/font-caps.svg" alt="Blah">
             </button>
           </div>
@@ -272,15 +272,15 @@
         Decoration
         <div class="flex-row__48">
           <div class=" hidden-input">
-            <select id="textDecoration" v-model="store.sponsoredTextDecoration">
+            <select id="textDecoration" v-model="store.sponsoredLink.textDecoration">
               <option>None</option>
               <option>List</option>
               <option>Fancy border</option>
             </select>
           </div>
-          <div v-if="store.sponsoredTextDecoration === 'List'" class="flex-row__48">
+          <div v-if="store.sponsoredLink.textDecoration === 'List'" class="flex-row__48">
             <div class=" hidden-input">
-              <select id="isList" v-model="store.sponsoredTextListDecoration">
+              <select id="isList" v-model="store.sponsoredLink.textListDecoration">
                 <option>Heart</option>
                 <option>Lightning</option>
                 <option>Sparkle</option>
@@ -289,18 +289,18 @@
               </select>
             </div>
             <div>
-              <button :class="store.sponsoredTextDecorationPosition === 'Left'? ' filled img' : 'img'"
-                      @click="store.sponsoredTextDecorationPosition = 'Left'">
+              <button :class="store.sponsoredLink.textDecorationPosition === 'Left'? ' filled img' : 'img'"
+                      @click="store.sponsoredLink.textDecorationPosition = 'Left'">
                 <img src="../assets/icon/icon-left.svg" alt="lorem" height="24" width="24">
               </button>
-              <button :class="store.sponsoredTextDecorationPosition === 'Right'? ' filled img' : 'img'"
-                      @click="store.sponsoredTextDecorationPosition = 'Right'">
+              <button :class="store.sponsoredLink.textDecorationPosition === 'Right'? ' filled img' : 'img'"
+                      @click="store.sponsoredLink.textDecorationPosition = 'Right'">
                 <img src="../assets/icon/icon-right.svg" alt="lorem" height="24" width="24">
               </button>
             </div>
             <div class="hidden-input">
               <img src="../assets/icon/margin_between_links.svg" alt="blah" height="24" width="24">
-              <input v-model="store.sponsoredTextListDecorationGap" class="dense">
+              <input v-model="store.sponsoredLink.textListDecorationGap" class="dense">
             </div>
           </div>
         </div>
@@ -321,6 +321,9 @@ export default {
       template: 'Soda',
       store
     }
+  },
+  watch(){
+    store.setTemplate(this.template)
   }
 }
 </script>
