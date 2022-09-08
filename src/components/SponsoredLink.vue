@@ -1,6 +1,20 @@
 <template>
-  <div class="sponsored-link" :style="linkStyle">
+  <div class="sponsored-link flex-row__8" :style="linkStyle">
+    <span v-if="store.sponsoredTextDecoration === 'List' && store.sponsoredTextDecorationPosition === 'Left'">
+      <span v-if="store.sponsoredTextListDecoration === 'Heart'">&#128151;</span>
+      <span v-if="store.sponsoredTextListDecoration === 'Lightning'">&#9889;</span>
+      <span v-if="store.sponsoredTextListDecoration === 'Sparkle'">&#10024;</span>
+      <span v-if="store.sponsoredTextListDecoration === 'Moon'">&#127770;</span>
+      <span v-if="store.sponsoredTextListDecoration === 'Flower'">&#127800;</span>
+    </span>
     Sponsored link
+    <span v-if="store.sponsoredTextDecoration === 'List' && store.sponsoredTextDecorationPosition === 'Right'">
+      <span v-if="store.sponsoredTextListDecoration === 'Heart'">&#128151;</span>
+      <span v-if="store.sponsoredTextListDecoration === 'Lightning'">&#9889;</span>
+      <span v-if="store.sponsoredTextListDecoration === 'Sparkle'">&#10024;</span>
+      <span v-if="store.sponsoredTextListDecoration === 'Moon'">&#127770;</span>
+      <span v-if="store.sponsoredTextListDecoration === 'Flower'">&#127800;</span>
+    </span>
   </div>
 </template>
 
@@ -31,9 +45,10 @@ export default {
         '--font-size': store.sponsoredLinkFontSize + 'px',
         '--font-caps': store.sponsoredLinkFontIsCaps ? 'uppercase' : 'none',
         '--font-is-bold': store.sponsoredLinkFontIsBold ? '700' : '400',
-        '--font-italic': store.sponsoredLinkFontIsItalic ? 'italic': 'normal',
-        '--font-underlined': store.sponsoredLinkFontIsUnderlined ? 'underline': 'none',
+        '--font-italic': store.sponsoredLinkFontIsItalic ? 'italic' : 'normal',
+        '--font-underlined': store.sponsoredLinkFontIsUnderlined ? 'underline' : 'none',
         '--font-align': store.sponsoredLinkTextAlignment,
+        '--gap': store.sponsoredTextListDecorationGap + 'px',
       }
     }
   }
@@ -53,6 +68,11 @@ export default {
   font-weight: var(--font-is-bold);
   font-style: var(--font-italic);
   text-decoration: var(--font-underlined);
-  text-align: var(--font-align);
+  justify-content: var(--font-align);
+
+  gap: var(--gap);
+}
+.sponsored-link img{
+  font-size: var(--font-size);
 }
 </style>

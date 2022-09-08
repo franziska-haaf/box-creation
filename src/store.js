@@ -47,5 +47,9 @@ export const store = reactive({
     sponsoredLinkFontIsUnderlined: false,
     sponsoredLinkFontIsCaps: false,
     sponsoredLinkTextAlignment: 'left',
+    sponsoredTextDecoration: 'None',
+    sponsoredTextDecorationPosition: 'Left',
+    sponsoredTextListDecoration: 'Heart',
+    sponsoredTextListDecorationGap: '8'
 
 })

@@ -261,12 +261,44 @@
             </button>
           </div>
         </div>
-
       </div>
 
       <!--Decoration options-->
       <div class="flex-column__4">
         Decoration
+        <div class="flex-row__48">
+          <div class=" hidden-input">
+            <select id="textDecoration" v-model="store.sponsoredTextDecoration">
+              <option>None</option>
+              <option>List</option>
+            </select>
+          </div>
+          <div v-if="store.sponsoredTextDecoration === 'List'" class="flex-row__48">
+            <div class=" hidden-input">
+              <select id="isList" v-model="store.sponsoredTextListDecoration">
+                <option>Heart</option>
+                <option>Lightning</option>
+                <option>Sparkle</option>
+                <option>Moon</option>
+                <option>Flower</option>
+              </select>
+            </div>
+            <div>
+              <button :class="store.sponsoredTextDecorationPosition === 'Left'? ' filled img' : 'img'"
+                      @click="store.sponsoredTextDecorationPosition = 'Left'">
+                <img src="../assets/icon/icon-left.svg" alt="lorem" height="24" width="24">
+              </button>
+              <button :class="store.sponsoredTextDecorationPosition === 'Right'? ' filled img' : 'img'"
+                      @click="store.sponsoredTextDecorationPosition = 'Right'">
+                <img src="../assets/icon/icon-right.svg" alt="lorem" height="24" width="24">
+              </button>
+            </div>
+            <div class="hidden-input">
+              <img src="../assets/icon/margin_between_links.svg" alt="blah" height="24" width="24">
+              <input v-model="store.sponsoredTextListDecorationGap" class="dense">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
