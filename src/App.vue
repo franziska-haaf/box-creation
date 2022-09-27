@@ -21,6 +21,13 @@
       <component :is="currentTab"></component>
       <BoxPreview/>
     </main>
+    <footer>
+      <button class="primary" disabled>Cancel</button>
+      <button class="primary text" disabled>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M14.1 19H7v-2h7.1q1.575 0 2.737-1Q18 15 18 13.5T16.837 11q-1.162-1-2.737-1H7.8l2.6 2.6L9 14 4 9l5-5 1.4 1.4L7.8 8h6.3q2.425 0 4.163 1.575Q20 11.15 20 13.5q0 2.35-1.737 3.925Q16.525 19 14.1 19Z"/></svg>
+        Undo last action</button>
+      <button class="primary filled" disabled>Create box</button>
+    </footer>
   </div>
 </template>
 
@@ -47,7 +54,7 @@ export default {
     }
   },
   mounted() {
-   store.setTemplate()
+    store.setTemplate()
   },
 }
 </script>
@@ -74,9 +81,9 @@ body {
   padding: 0;
 }
 
-header{
+header {
   width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.12);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
   padding: 32px 32px 0;
   box-sizing: border-box;
 }
@@ -100,7 +107,7 @@ header{
 
   main {
     box-sizing: border-box;
-    padding: 0 32px 32px;
+    padding: 0 32px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -111,6 +118,14 @@ header{
     > div {
       width: 50%;
     }
+  }
+
+  footer{
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 24px 24px;
   }
 }
 </style>

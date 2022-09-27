@@ -171,6 +171,14 @@ button {
     }
   }
 
+  &.text {
+    border: none;
+  }
+
+  svg{
+    fill: $color-primary;
+  }
+
   &:not(.filled):hover {
     background: $color-grey_hover;
     cursor: pointer;
@@ -178,7 +186,7 @@ button {
 
   &:disabled:hover {
     background: transparent;
-    cursor: inherit;
+    cursor: not-allowed;
   }
 
   + button {
@@ -201,7 +209,7 @@ button {
 
     &:disabled:hover {
       background: transparent;
-      cursor: inherit;
+      cursor: not-allowed;
     }
 
     & + .primary {
