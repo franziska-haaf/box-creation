@@ -1,4 +1,7 @@
 # box-creation
+```
+alias yarn=~/node_modules/yarn/bin/yarn.js
+```
 
 ## Project setup
 ```
